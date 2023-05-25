@@ -1,0 +1,198 @@
+import {
+    initializeApp,
+    getApp,
+    FirebaseApp,
+    deleteApp,
+    registerVersion
+  } from "@firebase/app";
+
+import { 
+    collection,
+    doc,
+    addDoc,
+    setDoc,
+    updateDoc,
+    deleteDoc,
+    collectionGroup,
+    connectFirestoreEmulator ,
+    getDoc,
+    getDocs,
+    query,
+    arrayRemove,
+    where,
+    orderBy,
+    limit,
+    startAfter,
+    startAt,
+    endBefore,
+    endAt,
+    increment,
+    onSnapshot,
+    getFirestore,
+    Timestamp,
+    FieldValue,OrderByDirection,
+     WhereFilterOp,
+    FieldPath,
+    runTransaction,
+    WriteBatch,
+    arrayUnion
+  } from "@firebase/firestore";
+  
+
+  import {
+    getAuth,
+    signOut,
+    
+    signInWithCustomToken,
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    signInAnonymously,
+    signInWithPopup,
+    sendPasswordResetEmail,
+    confirmPasswordReset,
+    applyActionCode,
+    reauthenticateWithPopup,
+    checkActionCode,
+    verifyPasswordResetCode,
+    updateProfile,
+    updateEmail,
+    updatePassword,
+    sendEmailVerification,
+    verifyBeforeUpdateEmail,
+    linkWithCredential,
+    reauthenticateWithCredential,
+    fetchSignInMethodsForEmail,
+    onAuthStateChanged,
+    onIdTokenChanged,
+    User,
+    Unsubscribe,
+    ActionCodeInfo,
+    Auth,
+    AuthProvider,
+    EmailAuthProvider,
+    FacebookAuthProvider,
+    GithubAuthProvider,
+    GoogleAuthProvider,
+    OAuthProvider,
+    PhoneAuthProvider,
+    TwitterAuthProvider
+  } from "@firebase/auth";
+
+  import { 
+    getStorage, 
+    ref, 
+    list, 
+    getDownloadURL, 
+    getMetadata, 
+    uploadBytes, 
+    uploadBytesResumable, 
+    uploadString, 
+    deleteObject, 
+} from '@firebase/storage';
+
+
+
+const firebaseConfig = {
+    apiKey:import.meta.env.VITE_APP_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_APP_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_APP_FIREBASE_SENDER_ID,
+    appId: import.meta.env.VITE_APP_FIREBASE_APP_ID 
+ };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+const storage = getStorage(app);
+
+export { 
+        app,
+            initializeApp,
+            getApp,
+            type FirebaseApp,
+            deleteApp,
+            registerVersion,
+
+        storage,
+            getStorage, 
+            ref, 
+            list, 
+            getDownloadURL, 
+            getMetadata, 
+            uploadBytes, 
+            uploadBytesResumable, 
+            uploadString, 
+           
+            deleteObject, 
+           
+
+        auth,
+            signInWithCustomToken,
+            reauthenticateWithPopup,
+            signInWithEmailAndPassword,
+            createUserWithEmailAndPassword,
+            signInAnonymously,
+            signInWithPopup,
+            sendPasswordResetEmail,
+            confirmPasswordReset,
+            applyActionCode,
+            checkActionCode,
+            verifyPasswordResetCode,
+            updateProfile,
+            updateEmail,
+            updatePassword,
+            sendEmailVerification,
+            verifyBeforeUpdateEmail,
+            linkWithCredential,
+            reauthenticateWithCredential,
+            fetchSignInMethodsForEmail,
+            onAuthStateChanged,
+            onIdTokenChanged,
+            type User,
+            type Unsubscribe,
+            type ActionCodeInfo,
+            type Auth,
+            type AuthProvider,
+            EmailAuthProvider,
+            FacebookAuthProvider,
+            GithubAuthProvider,
+            GoogleAuthProvider,
+            OAuthProvider,
+            PhoneAuthProvider,
+            TwitterAuthProvider,
+            signOut,
+
+        db,
+            collection,
+            arrayRemove,
+            doc,
+            addDoc,
+            type OrderByDirection,
+            type WhereFilterOp,
+            setDoc,
+            updateDoc,
+            increment,
+            deleteDoc,
+            arrayUnion,
+            getDoc,
+            getDocs,
+            collectionGroup,
+            query,
+            where,
+            orderBy,
+            limit,
+            startAfter,
+            startAt,
+            endBefore,
+            endAt,
+            onSnapshot,
+            Timestamp,
+            FieldValue,
+            FieldPath,
+            runTransaction,
+            WriteBatch, 
+            connectFirestoreEmulator 
+};
+
