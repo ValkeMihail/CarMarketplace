@@ -14,6 +14,7 @@ export const HeaderHome = () => {
                             <p>Buy a new or used car from dealers or normal users</p>
                             <span className="bar"></span>
                             <h1><a 
+                                    href="/buy"
                                     onClick={() => navigate('/buy')}
                                     className="heading" 
                                     >
@@ -24,7 +25,8 @@ export const HeaderHome = () => {
                         <div>
                             <h1>
                                 <a className="heading" 
-                                onClick={() => navigate('/sell')}    
+                                    href="/sell"
+                                    onClick={() => navigate('/sell')}    
                                 >Sell Cars</a>
                             </h1>
                             <span className="bar"></span>

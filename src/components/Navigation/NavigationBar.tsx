@@ -5,7 +5,7 @@ import { faBars, faSun , faRightFromBracket, faCommentDots,faMoon} from "@fortaw
 
 import user_default from "../../assets/user_default.svg";
 
-import { useState ,useEffect, useContext} from "react";
+import { useState ,useEffect, useContext, useCallback} from "react";
 import { useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../../AuthContext";
@@ -38,15 +38,15 @@ const NavigationBar = () => {
     /**
      * This function is used to load the theme of the website.
      */
-    const loadTheme = () => {
+    const loadTheme = useCallback(() => {
     const storageTheme = localStorage.getItem("data-theme");
     storageTheme && changeTheme(storageTheme);
-    };
+    },[]);
 
 
     useEffect(() => {
         loadTheme();
-    }, []);
+    }, [loadTheme]);
 
 
     /**
@@ -74,6 +74,7 @@ const NavigationBar = () => {
                     <FontAwesomeIcon icon={faBars}/>
                 </button>
                 <a 
+                    href="/"
                     className="brand" 
                     onClick={() => navigate("/")}> 
                         Car Marketplace</a>
@@ -87,28 +88,39 @@ const NavigationBar = () => {
                 <ul className={isMenuOpen ? "menu-open menu" : "menu"}>
                     <li>
                         <div className="toggle-container">
-                            <button className="theme-btn light" onClick={() => changeTheme('light')}>
+                            <button 
+                              className="theme-btn light" 
+                              id="changeThemeButtonFromDarkToLight" 
+                              aria-label="Change Theme"
+                              onClick={() => changeTheme('light')}>
                                 <FontAwesomeIcon icon={faSun} className="fontAwesomeIcon" />
                             </button>
-                            <button className="theme-btn dark" onClick={() => changeTheme('dark')}>
+                            <button 
+                              id="changeThemeButtonFromLightToDark" 
+                              aria-label="Change Theme"
+                              className="theme-btn dark" 
+                              onClick={() => changeTheme('dark')}>
                                 <FontAwesomeIcon icon={faMoon} />
                             </button>
                         </div>
                     </li>
                     <li>
                         <a
+                            href="/"
                             onClick={()=>navigate("/")}>
                                 Home
                         </a> 
                     </li>
                     <li>
                         <a
+                            href="/sell"
                             onClick={()=>navigate("/sell")}>
                                 Sell a Car
                         </a> 
                     </li>
                     <li> 
                         <a
+                            href="/buy"
                             onClick={()=>navigate("/buy")} > 
                                 Buy a Car
                         </a>
@@ -120,6 +132,7 @@ const NavigationBar = () => {
                             
                         <div id="whenSignedOut_NavBar">
                             <a 
+                                href="/login"
                                 onClick={()=>navigate("/login")}  
                                 className="btn btn-social">Log in
                             </a>

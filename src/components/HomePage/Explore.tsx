@@ -95,14 +95,16 @@ export const Explore = () => {
                             <div className="card" key={user.userID}>
                                 <img
                                     src={bottomPng}
-                                    alt="car-lot"
+                                    alt="card starter"
+                                    width={198.4}
+                                    height={52.28}
                                     className="bg-img hoverZoomLink"
                                 />
                                 <div id="imgWrapDealerCard">
                                     <img src={user.photoURL ?? user_default} alt="user" className="profile-img" />
                                 </div>
                                 <h3>{user.username}</h3>
-                                <h3>Cars listed: {user.adsArray != null ?   user!?.adsArray!?.length : 0 }</h3>
+                                <h3>Cars listed: {user.adsArray != null ? user?.adsArray?.length : 0 }</h3>
                                 <button
                                     onClick={() => navigate(`/user/${user.userID}`)}
                                     className="card-btn"

@@ -11,7 +11,10 @@ export const Services = () => {
     
     return (
         <div className="container">
-            <img id="services" src={bottom} className="grid-img" />
+            <img id="services"
+              width={1136}
+              height={299.35}
+              alt='Services section staring image' src={bottom} className="grid-img" />
             <section  className="services">
                 <div className="heading">
                     <h2>What we actually do</h2>

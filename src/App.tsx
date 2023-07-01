@@ -19,20 +19,20 @@ function App() {
 
   return (
     <>
-     
      <AuthProvider>
-        
         <Router>
            <NavigationBar/>
            <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/sell" element={
+                <Route path="/sell" 
+                  element={
                     <SellOrEditPage 
                         isSellPage={true} 
                         carDefault={null} 
                         id={null}
-                />}/> 
-                
+                    />
+                  }
+                /> 
                 <Route path="/buy" element={<Buy />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/myAccount" element={<MyAccount />} />
@@ -40,16 +40,10 @@ function App() {
                 <Route path="/ad/:carID" element={<CarAd/>} />
                 <Route path="/user/:userID" element={<User/>} />
                 <Route path='/chats/chat/:chatID' element={<Chat/>}/>
-                {/*<Route path="/admin" element={<Login auth={auth} />} />
-                <Route path="/dashboard" element={<Dashboard />} /> */}
             </Routes>
         </Router>
-        
-        
-        
         <Footer/>
     </AuthProvider>
-      
     </>
   )
 }

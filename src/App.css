@@ -619,7 +619,7 @@ header .container {
 
 .services .card img {
     width: 15em;
-    height: 13em;
+    height: auto;
     margin: -5em 0 1em 0;
 }
 
@@ -2686,6 +2686,7 @@ button.second-container button.form-input {
 
     body {
         margin: 0;
+        overflow-x: hidden !important;
     }
 
     .container {
@@ -2819,16 +2820,12 @@ button.second-container button.form-input {
         flex-wrap: wrap;
     }
 
-    body {
-        overflow-x: hidden !important;
-    }
+    
 }
 
 @media screen and (max-width: 768px) {
 
-    .searchBar{
-        
-    }
+
     .buyScreen{
     margin-top: 5.9em;    
     

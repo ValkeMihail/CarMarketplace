@@ -12,6 +12,7 @@ export const Trial = () => {
                 Tools and services available to sellers and buyers, You have your own website inside the CarMarketplace platform where customers can see all your ads.
             </p>
             <a className="btn btn-primary"
+                href="/login"
                  onClick={() => navigate('/login')}
                 >Join Us Now</a>
         </section>
