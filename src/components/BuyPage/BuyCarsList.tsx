@@ -19,7 +19,7 @@ type AllCarsListProps = {
  * Used in BuyPage to display all car ads in the database 
  * @returns  CarCard component with all car ads in the database
  */
-export const BuyCarsList = ({ sort, filter ,search, startAfterRef} : AllCarsListProps) => {
+const BuyCarsList = ({ sort, filter ,search, startAfterRef} : AllCarsListProps) => {
       
     
     const [carDocs, setCarDocs] = useState<any[]>([]);
@@ -170,3 +170,6 @@ export const BuyCarsList = ({ sort, filter ,search, startAfterRef} : AllCarsList
         </>
     );
 };
+
+
+export default BuyCarsList;

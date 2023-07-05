@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose, faSliders,  faSortAsc, faSortDesc, faSearch} from "@fortawesome/free-solid-svg-icons";
-import { BuyCarsList } from "./BuyCarsList";
-import {useEffect ,  useState } from "react";
+import {lazy, useEffect ,  useState } from "react";
 
+const BuyCarsList = lazy(() => import("./BuyCarsList"));
 
 export type sortType ={
     sortProperty : string;

@@ -1,51 +1,55 @@
-
-import { Footer } from './components/Navigation/Footer.tsx'
-import './App.css'
-import NavigationBar from './components/Navigation/NavigationBar.tsx'
-import { Home } from './components/HomePage/Index.tsx'
-import { Login } from './components/LoginPage/Login'
-import { Buy } from './components/BuyPage/buy'
-import { SellOrEditPage } from './components/SellPage/Sell'
+import { Footer } from './components/Navigation/Footer.tsx';
+import './App.css';
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { AuthProvider } from './AuthContext.tsx'
-import { MyAccount } from './components/MyAccountPage/myAccout.tsx'
-import { Edit } from './components/EditAdPage/Edit.tsx'
-import { CarAd } from './components/CarAdPage/CarAd'
-import { User } from './components/UserProfilePage/User.tsx'
-import { Chat } from './components/ChatPage/Chat.tsx'
+import { AuthProvider } from './AuthContext.tsx';
+import  NavigationBar  from './components/Navigation/NavigationBar.tsx';
+
+
+const Home = lazy(() => import('./components/HomePage/Index.tsx').then(module => ({ default: module.Home })));
+const Login = lazy(() => import('./components/LoginPage/Login').then(module => ({ default: module.Login })));
+const Buy = lazy(() => import('./components/BuyPage/buy').then(module => ({ default: module.Buy })));
+const SellOrEditPage = lazy(() => import('./components/SellPage/Sell').then(module => ({ default: module.SellOrEditPage })));
+const MyAccount = lazy(() => import('./components/MyAccountPage/myAccout.tsx').then(module => ({ default: module.MyAccount })));
+const Edit = lazy(() => import('./components/EditAdPage/Edit.tsx').then(module => ({ default: module.Edit })));
+const CarAd = lazy(() => import('./components/CarAdPage/CarAd').then(module => ({ default: module.CarAd })));
+const User = lazy(() => import('./components/UserProfilePage/User.tsx').then(module => ({ default: module.User })));
+const Chat = lazy(() => import('./components/ChatPage/Chat.tsx').then(module => ({ default: module.Chat })));
+
 
 function App() {
-   
-
   return (
     <>
-     <AuthProvider>
+      <AuthProvider>
         <Router>
-           <NavigationBar/>
-           <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/sell" 
-                  element={
-                    <SellOrEditPage 
-                        isSellPage={true} 
-                        carDefault={null} 
-                        id={null}
-                    />
-                  }
-                /> 
-                <Route path="/buy" element={<Buy />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/myAccount" element={<MyAccount />} />
-                <Route path="/edit/:id" element={<Edit/>} />
-                <Route path="/ad/:carID" element={<CarAd/>} />
-                <Route path="/user/:userID" element={<User/>} />
-                <Route path='/chats/chat/:chatID' element={<Chat/>}/>
+          <Suspense fallback={<div>Loading...</div>}>
+            <NavigationBar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route
+                path="/sell"
+                element={
+                  <SellOrEditPage
+                    isSellPage={true}
+                    carDefault={null}
+                    id={null}
+                  />
+                }
+              />
+              <Route path="/buy" element={<Buy />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/myAccount" element={<MyAccount />} />
+              <Route path="/edit/:id" element={<Edit />} />
+              <Route path="/ad/:carID" element={<CarAd />} />
+              <Route path="/user/:userID" element={<User />} />
+              <Route path="/chats/chat/:chatID" element={<Chat />} />
             </Routes>
+          </Suspense>
         </Router>
-        <Footer/>
-    </AuthProvider>
+        <Footer />
+      </AuthProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

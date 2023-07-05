@@ -2769,6 +2769,10 @@ button.second-container button.form-input {
         width: 25em;
         padding: 0;
     }
+    .services .card img {
+      width: 60%;
+      height: auto;
+    }
 
     .sell-screen .second-container .first-section,
     .sell-screen .second-container .second-section {
@@ -2824,6 +2828,19 @@ button.second-container button.form-input {
 }
 
 @media screen and (max-width: 768px) {
+    p , span {
+        font-size: 14px !important;
+    }
+    #services{
+      width: 100% !important;
+      height: auto !important;
+    }
+
+    .dealers .card .bg-img{
+      width: 100% !important;
+      height: auto !important;
+    }
+
 
 
     .buyScreen{
@@ -2846,6 +2863,7 @@ button.second-container button.form-input {
 
     .header-body p {
         text-align: center !important;
+        font-size: 12px;
     }
 
     .bar {

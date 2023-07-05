@@ -1,9 +1,11 @@
-
-
-import { Explore } from "./Explore";
 import { HeaderHome } from "./HeaderHome";
-import { Services } from "./Services";
-import { Trial } from "./Trial";
+import { lazy } from "react";
+
+const Services = lazy(() => import('./Services'));
+const Explore = lazy(() => import('./Explore'));
+const Trial = lazy(() => import('./Trial'));
+
+
 
 export const Home = () => {
     return (

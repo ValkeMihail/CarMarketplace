@@ -70,7 +70,10 @@ const NavigationBar = () => {
     
         <div className="navContainer">
             <nav>
-                <button onClick={toggleMenu} className="menu-btn">
+                <button 
+                  aria-label="Toggle Menu"
+                  onClick={toggleMenu} 
+                  className="menu-btn">
                     <FontAwesomeIcon icon={faBars}/>
                 </button>
                 <a 

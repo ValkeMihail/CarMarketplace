@@ -7,7 +7,7 @@ import bottomPng from "../../assets/bottom.png";
 import user_default from "../../assets/user_default.svg";
 
 
-export const Explore = () => {
+const Explore = () => {
 
 
     const navigate = useNavigate();
@@ -124,3 +124,5 @@ export const Explore = () => {
 
 
 }
+
+export default Explore;

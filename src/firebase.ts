@@ -1,20 +1,18 @@
 import {
     initializeApp,
     getApp,
-    FirebaseApp,
-    deleteApp,
-    registerVersion
+    
   } from "@firebase/app";
 
 import { 
     collection,
     doc,
     addDoc,
+    OrderByDirection,
     setDoc,
     updateDoc,
     deleteDoc,
     collectionGroup,
-    connectFirestoreEmulator ,
     getDoc,
     getDocs,
     query,
@@ -24,35 +22,26 @@ import {
     limit,
     startAfter,
     startAt,
-    endBefore,
-    endAt,
     increment,
     onSnapshot,
     getFirestore,
     Timestamp,
-    FieldValue,OrderByDirection,
-     WhereFilterOp,
+    FieldValue,
+    WhereFilterOp,
     FieldPath,
-    runTransaction,
-    WriteBatch,
     arrayUnion
   } from "@firebase/firestore";
   
 
   import {
     getAuth,
-    signOut,
-    
-    signInWithCustomToken,
+    signOut,    
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
-    signInAnonymously,
     signInWithPopup,
     sendPasswordResetEmail,
     confirmPasswordReset,
-    applyActionCode,
     reauthenticateWithPopup,
-    checkActionCode,
     verifyPasswordResetCode,
     updateProfile,
     updateEmail,
@@ -61,32 +50,21 @@ import {
     verifyBeforeUpdateEmail,
     linkWithCredential,
     reauthenticateWithCredential,
-    fetchSignInMethodsForEmail,
     onAuthStateChanged,
-    onIdTokenChanged,
     User,
     Unsubscribe,
-    ActionCodeInfo,
     Auth,
     AuthProvider,
     EmailAuthProvider,
-    FacebookAuthProvider,
-    GithubAuthProvider,
     GoogleAuthProvider,
     OAuthProvider,
-    PhoneAuthProvider,
-    TwitterAuthProvider
   } from "@firebase/auth";
 
   import { 
     getStorage, 
     ref, 
-    list, 
     getDownloadURL, 
-    getMetadata, 
     uploadBytes, 
-    uploadBytesResumable, 
-    uploadString, 
     deleteObject, 
 } from '@firebase/storage';
 
@@ -111,34 +89,33 @@ export {
         app,
             initializeApp,
             getApp,
-            type FirebaseApp,
-            deleteApp,
-            registerVersion,
+            
+            
 
         storage,
             getStorage, 
             ref, 
-            list, 
+           
             getDownloadURL, 
-            getMetadata, 
+           
             uploadBytes, 
-            uploadBytesResumable, 
-            uploadString, 
+          
+           
            
             deleteObject, 
            
 
         auth,
-            signInWithCustomToken,
+           
             reauthenticateWithPopup,
             signInWithEmailAndPassword,
             createUserWithEmailAndPassword,
-            signInAnonymously,
+          
             signInWithPopup,
             sendPasswordResetEmail,
             confirmPasswordReset,
-            applyActionCode,
-            checkActionCode,
+           
+            
             verifyPasswordResetCode,
             updateProfile,
             updateEmail,
@@ -147,21 +124,20 @@ export {
             verifyBeforeUpdateEmail,
             linkWithCredential,
             reauthenticateWithCredential,
-            fetchSignInMethodsForEmail,
+           
             onAuthStateChanged,
-            onIdTokenChanged,
+           
             type User,
             type Unsubscribe,
-            type ActionCodeInfo,
+           
             type Auth,
             type AuthProvider,
             EmailAuthProvider,
-            FacebookAuthProvider,
-            GithubAuthProvider,
+           
+           
             GoogleAuthProvider,
             OAuthProvider,
-            PhoneAuthProvider,
-            TwitterAuthProvider,
+           
             signOut,
 
         db,
@@ -185,14 +161,11 @@ export {
             limit,
             startAfter,
             startAt,
-            endBefore,
-            endAt,
+           
             onSnapshot,
             Timestamp,
             FieldValue,
             FieldPath,
-            runTransaction,
-            WriteBatch, 
-            connectFirestoreEmulator 
+           
 };
 

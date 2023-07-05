@@ -5,7 +5,7 @@ import sellPng from '../../assets/sell.png';
 
 import { useNavigate } from 'react-router-dom';
 
-export const Services = () => {
+ const Services = () => {
 
     const navigate = useNavigate();
     
@@ -48,3 +48,5 @@ export const Services = () => {
     );
 
 }
+
+export default Services;

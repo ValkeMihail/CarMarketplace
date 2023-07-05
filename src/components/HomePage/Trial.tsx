@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export const Trial = () => {
+ const Trial = () => {
 
     const navigate = useNavigate();
 
@@ -19,3 +19,5 @@ export const Trial = () => {
     );
 
 }
+
+export default Trial;
