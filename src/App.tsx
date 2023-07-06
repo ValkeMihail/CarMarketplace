@@ -4,6 +4,7 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './AuthContext.tsx';
 import  NavigationBar  from './components/Navigation/NavigationBar.tsx';
+import { LoadingOverlay } from './components/Navigation/LoadingOverlay.tsx';
 
 
 const Home = lazy(() => import('./components/HomePage/Index.tsx').then(module => ({ default: module.Home })));
@@ -21,8 +22,8 @@ function App() {
   return (
     <>
       <AuthProvider>
-        <Router>
-          <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<LoadingOverlay className='fixedLoading' />}>
+          <Router>
             <NavigationBar />
             <Routes>
               <Route path="/" element={<Home />} />
@@ -44,9 +45,10 @@ function App() {
               <Route path="/user/:userID" element={<User />} />
               <Route path="/chats/chat/:chatID" element={<Chat />} />
             </Routes>
-          </Suspense>
-        </Router>
-        <Footer />
+            <Footer />
+          </Router>
+          
+        </Suspense>
       </AuthProvider>
     </>
   );

@@ -1,8 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose, faSliders,  faSortAsc, faSortDesc, faSearch} from "@fortawesome/free-solid-svg-icons";
-import {lazy, useEffect ,  useState } from "react";
-
-const BuyCarsList = lazy(() => import("./BuyCarsList"));
+import { useEffect ,  useState } from "react";
+import BuyCarsList from "./BuyCarsList";
 
 export type sortType ={
     sortProperty : string;
@@ -300,7 +299,7 @@ export function Buy() {
                 }
             </div>
             <div className="buyScreen">
-            <BuyCarsList 
+            <BuyCarsList
                 search={searchToQuery}
                 sort={sort}
                 filter={filterToQuery}

@@ -504,7 +504,7 @@ header .container {
 
 .dealers .card {
     border: 1px var(--white) solid;
-    background: radial-gradient(var(--light-red), var(--charcoal));
+    background: radial-gradient(var(--light-red), rgba(108, 10, 10, 0.75));
     border-radius: 10px;
     position: relative;
     padding: 7em 1em 1em 1em;
@@ -577,15 +577,15 @@ header .container {
 }
 
 .dealers .card:nth-child(2) {
-    background: radial-gradient(rgb(148, 53, 85), rgba(148, 53, 85, 0.5));
+    background: radial-gradient(rgb(148, 53, 85), rgba(148, 53, 85, 0.75));
 }
 
 .dealers .card:nth-child(3) {
-    background: radial-gradient(rgb(102, 37, 108), rgba(102, 37, 108, 0.5));
+    background: radial-gradient(rgb(102, 37, 108), rgba(102, 37, 108, 0.75));
 }
 
 .dealers .card:nth-child(4) {
-    background: radial-gradient(rgb(66, 48, 122), rgba(66, 48, 122, 0.5));
+    background: radial-gradient(rgb(66, 48, 122), rgba(66, 48, 122, 0.75));
 }
 
 .services {
@@ -3823,4 +3823,10 @@ button.second-container button.form-input {
 
 .form-input .selectWrapper{
     margin-bottom: 1em;
+}
+.services .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }

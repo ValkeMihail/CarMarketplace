@@ -23,7 +23,7 @@ import { useNavigate } from 'react-router-dom';
 
                     </p>
                 </div>
-                <div className="cards">
+                <div className="servicesCards cards">
                     <div 
                         onClick={() => navigate('/buy')}
                         className="card"
