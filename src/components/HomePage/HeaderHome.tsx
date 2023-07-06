@@ -1,9 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 export const HeaderHome = () => {
-    
-    const navigate = useNavigate();
+
 
     return (
         <header>
@@ -13,21 +12,19 @@ export const HeaderHome = () => {
                         <div>
                             <p>Buy a new or used car from dealers or normal users</p>
                             <span className="bar"></span>
-                            <h1><a 
-                                    href="/buy"
-                                    onClick={() => navigate('/buy')}
+                            <h1><Link 
+                                    to="/buy"
                                     className="heading" 
                                     >
                                         Buy Cars
-                                </a>
+                                </Link>
                             </h1>
                         </div>
                         <div>
                             <h1>
-                                <a className="heading" 
-                                    href="/sell"
-                                    onClick={() => navigate('/sell')}    
-                                >Sell Cars</a>
+                                <Link className="heading" 
+                                    to="/sell"
+                                >Sell Cars</Link>
                             </h1>
                             <span className="bar"></span>
                             <p>Fill in the details of the car and list it for free</p>

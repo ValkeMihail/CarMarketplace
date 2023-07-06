@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 export function showToolTip(message: string , color : string) {
 
@@ -62,12 +63,24 @@ export const Footer = () => {
                 <div>
                     <h3>Social Media</h3>
                     <ul>
-                        <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
-                        <li><a href="https://www.linkedin.com/" target="_blank">Linkedin</a></li>
-                        <li><a href="https://twitter.com/" target="_blank">Twitter</a></li>
-                        <li><a href="https://web.whatsapp.com/" target="_blank">WhatsUp</a></li>
-                        <li><a href="https://web.telegram.org/" target="_blank">Telegram</a></li>
-                        <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+                        <li>
+                          <Link to="https://www.facebook.com/" target="_blank">Facebook</Link>
+                        </li>
+                        <li>
+                          <Link to="https://www.linkedin.com/" target="_blank">Linkedin</Link>
+                        </li>
+                        <li>
+                          <Link to="https://twitter.com/" target="_blank">Twitter</Link>
+                        </li>
+                        <li>
+                          <Link to="https://web.whatsapp.com/" target="_blank">WhatsUp</Link>
+                        </li>
+                        <li>
+                          <Link to="https://web.telegram.org/" target="_blank">Telegram</Link>
+                          </li>
+                        <li>
+                          <Link to="https://www.instagram.com/" target="_blank">Instagram</Link>
+                          </li>
                     </ul>
                 </div>
             </footer>

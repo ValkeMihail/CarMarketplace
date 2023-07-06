@@ -6,7 +6,7 @@ import { faBars, faSun , faRightFromBracket, faCommentDots,faMoon} from "@fortaw
 import user_default from "../../assets/user_default.svg";
 
 import { useState ,useEffect, useContext, useCallback} from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../../AuthContext";
 import { AllChats } from "./AllChats";
@@ -76,11 +76,12 @@ const NavigationBar = () => {
                   className="menu-btn">
                     <FontAwesomeIcon icon={faBars}/>
                 </button>
-                <a 
-                    href="/"
+                <Link 
+                    to="/"
                     className="brand" 
-                    onClick={() => navigate("/")}> 
-                        Car Marketplace</a>
+                > 
+                        Car Marketplace
+                </Link>
                 <div 
                     onClick={toggleMenu} 
                     className={isMenuOpen ? "overlayMenuOpen overlayMenu" : "menu"}
@@ -108,25 +109,24 @@ const NavigationBar = () => {
                         </div>
                     </li>
                     <li>
-                        <a
-                            href="/"
-                            onClick={()=>navigate("/")}>
+                        <Link
+                            to="/">
                                 Home
-                        </a> 
+                        </Link> 
                     </li>
                     <li>
-                        <a
-                            href="/sell"
-                            onClick={()=>navigate("/sell")}>
+                        <Link
+                            to="/sell"
+                        >
                                 Sell a Car
-                        </a> 
+                        </Link> 
                     </li>
                     <li> 
-                        <a
-                            href="/buy"
-                            onClick={()=>navigate("/buy")} > 
+                        <Link
+                            to="/buy"
+                           > 
                                 Buy a Car
-                        </a>
+                        </Link>
                     </li>
                 </ul>
                 {user 
@@ -134,11 +134,10 @@ const NavigationBar = () => {
                     : (
                             
                         <div id="whenSignedOut_NavBar">
-                            <a 
-                                href="/login"
-                                onClick={()=>navigate("/login")}  
+                            <Link 
+                                to="/login"
                                 className="btn btn-social">Log in
-                            </a>
+                            </Link>
                         </div>
                     )
                 }

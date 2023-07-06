@@ -5,7 +5,7 @@ import googlePng from '../../assets/google.svg';
 import { AuthContext } from '../../AuthContext';
 import { showToolTip } from '../Navigation/Footer';
 
-import { useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { useState ,useContext , useEffect} from 'react';
 
 import { auth, sendPasswordResetEmail } from '../../firebase';
@@ -546,7 +546,7 @@ export const Login = () => {
                         No Account? Register
                     </a>
                     <br />
-                    <a 
+                    <a
                         onClick={() => resetPassword()}
                         id="resetPassword">
                         I forgot my password. Send me a password reset email

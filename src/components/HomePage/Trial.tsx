@@ -1,8 +1,7 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
  const Trial = () => {
 
-    const navigate = useNavigate();
 
     return (
         <section id="trial" className="trial">
@@ -11,10 +10,10 @@ import { useNavigate } from "react-router-dom";
                 Get a free account to start using these functionalities:<br />
                 Tools and services available to sellers and buyers, You have your own website inside the CarMarketplace platform where customers can see all your ads.
             </p>
-            <a className="btn btn-primary"
-                href="/login"
-                 onClick={() => navigate('/login')}
-                >Join Us Now</a>
+            <Link className="btn btn-primary"
+                to="/login"
+                >Join Us Now
+            </Link>
         </section>
     );
 
