@@ -114,34 +114,42 @@ export const LoginSection = ({updateEmailValue} : LoginSectionProps) => {
      */
     const signInEmailPassword = async (email: string, password: string): Promise<void> => {
         
-        setErrorMessages({} as errorMessagesLoginForm);
+        let newErrorMessages = {} as errorMessagesLoginForm;
+
         if (!email || email.indexOf('@') < 0 || email.indexOf('.') < 0 || email.length < 5 || email.length > 30 ) {
+            newErrorMessages = {
+                ...newErrorMessages,
+                email: 'A correct email is required.'
+            }
+        }
+        if (password.trim().length == 0) {
+          newErrorMessages = {
+            ...newErrorMessages,
+            password: 'A correct password is required. It must contain at least 6 characters, one uppercase letter, one lowercase letter and one number.'
+          }
+        }
+        
+        if (Object.keys(newErrorMessages).length > 0) {
+          setErrorMessages(newErrorMessages);
+          return; // Stop execution if there are errors
+        }
+
+
+
+        try {
+            await signInWithEmailAndPasswordHandler(email, password);
+            showToolTip("You have successfully logged in!", "green");
+            navigate("/");
+
+
+        } catch (error : any) {
             setErrorMessages((prevErrors) => ({
                 ...prevErrors,
-                email: 'A correct email is required.'
+                email: error.message as string,
             }));
-            }
-        if (password.trim().length == 0) {
-        setErrorMessages((prevErrors) => ({
-            ...prevErrors,
-            password: 'A correct password is required. It must contain at least 6 characters, one uppercase letter, one lowercase letter and one number.'
-        }));
+            
         }
-        if (Object.keys(errorMessages).length === 0) {
-            try {
-                await signInWithEmailAndPasswordHandler(email, password);
-                showToolTip("You have successfully logged in!", "green");
-                navigate("/");
-
-
-            } catch (error : any) {
-                setErrorMessages((prevErrors) => ({
-                    ...prevErrors,
-                    email: error.message as string,
-                }));
-                
-            }
-        }          
+                  
     }
 
     return (
@@ -225,71 +233,79 @@ export const RegisterSection = () => {
      * Function that checks if the data entered by the user is correct and if it is, it creates a new user in the database.
      */
     const handleRegister = async () => {
-        setErrorMessages({} as errorMessagesRegisterForm);
+        let newErrorMessages = {} as errorMessagesRegisterForm;
+
+
         if (!userData.username || userData.username.length < 3 || userData.username.length > 30) {
             
-            setErrorMessages((prevErrors) => ({
-                ...prevErrors,
+          newErrorMessages = {
+                ...newErrorMessages,
                 username: 'A correct username is required. It must contain at least 3 characters and maximum 30 characters.'
-            }));
+            }
         }
         if (!userData.email || userData.email.indexOf('@') < 0 || userData.email.indexOf('.') < 0 || userData.email.length < 5 || userData.email.length > 30 ) {
-            setErrorMessages((prevErrors) => ({
-                ...prevErrors,
+          newErrorMessages = {
+            ...newErrorMessages,
                 email: 'A correct email is required.'
-            }));
+            }
         }
         if (!credentials.password || credentials.password.length < 6 || credentials.password.length > 30 || !credentials.password.match(/[0-9]/g) || !credentials.password.match(/[a-z]/g) || !credentials.password.match(/[A-Z]/g)) {
-            setErrorMessages((prevErrors) => ({
-                ...prevErrors,
+          newErrorMessages = {
+            ...newErrorMessages,
                 password: 'A correct password is required. It must contain at least 6 characters, one uppercase letter, one lowercase letter and one number.'
-            }));
+            }
         }
         if (!credentials.confirmPassword || credentials.confirmPassword !== credentials.password) {
-            setErrorMessages((prevErrors) => ({
-                ...prevErrors,
+            newErrorMessages = {
+                ...newErrorMessages,
                 confirmPassword: 'The passwords do not match.'
-            }));
+            }
         }
         if (!userData.phoneCode || userData.phoneCode.length < 1 || userData.phoneCode.length > 4) {
-            setErrorMessages((prevErrors) => ({
-                ...prevErrors,
+          newErrorMessages = {
+            ...newErrorMessages,
                 phoneCode: 'A correct phone code is required.'
-            }));
+            }
         }
         if (!userData.phoneNumber || userData.phoneNumber.length < 6 || userData.phoneNumber.length > 15) {
-            setErrorMessages((prevErrors) => ({
-                ...prevErrors,
+          newErrorMessages = {
+            ...newErrorMessages,
                 phoneNumber: 'A correct phone number is required.'
-            }));
+            }
         }
         
-        if (Object.keys(errorMessages).length === 0) {
-            showToolTip("You have errors", "red");
-            try {
-                await createUserWithEmailAndPasswordHandler(userData.email, credentials.password);
-                setUserRegistered({
-                    id: "",
-                    username: userData.username || null,
-                    email: userData.email || null,
-                    phoneCountryCode: userData.phoneCode || null,
-                    phoneNr: userData.phoneNumber || null,
-                    favouriteAds: [],
-                    createdAt: null,
-                    adsArray: [] ,
-                    photoURL: null
-                });
-                navigate("/");
-                
-            } catch (error : any) {
-                setErrorMessages((prevErrors) => ({
-                    ...prevErrors,
-                    email: error.message as string,
-                }));
-                
-            };
-        };
+        
+        
+        if (Object.keys(newErrorMessages).length > 0) {
+          setErrorMessages(newErrorMessages);
+          return; // Stop execution if there are errors
+        }
+
+          
+        try {
+            await createUserWithEmailAndPasswordHandler(userData.email, credentials.password);
+            setUserRegistered({
+                id: "",
+                username: userData.username || null,
+                email: userData.email || null,
+                phoneCountryCode: userData.phoneCode || null,
+                phoneNr: userData.phoneNumber || null,
+                favouriteAds: [],
+                createdAt: null,
+                adsArray: [] ,
+                photoURL: null
+            });
+            navigate("/");
+            
+        } catch (error : any) {
+            setErrorMessages((prevErrors) => ({
+                ...prevErrors,
+                email: error.message as string,
+            }));
+            
+        }
     };
+
     
 
     return (
