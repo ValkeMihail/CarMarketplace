@@ -5,7 +5,7 @@ import {  arrayUnion,  auth,  db,  addDoc,  collection,  updateDoc,  doc,  getDo
 import { ChangeEvent, useRef, useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../AuthContext";
 import { showToolTip } from "../Navigation/Footer";
-import { Tags } from "./Tags";
+import { Tags } from "../Tags";
 import { NumericInput } from "../Inputs/NumericInput";
 import { Select } from "../Inputs/Select";
 import { Car } from "../../../types";
