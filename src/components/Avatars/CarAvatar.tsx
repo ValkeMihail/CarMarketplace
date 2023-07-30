@@ -1,10 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import {auth } from "../../utils/firebase";
-import { CarDocument } from "../../../types";
 import placeholderCarImage from "../../assets/placeHolderCar.png";
 
 type CarAvatarProps = {
-  carDoc : Partial<CarDocument>; 
+  carDoc : {
+    id: string;
+    userID: string;
+    images: string[];
+  }
 }
 
 export const CarAvatar = ({

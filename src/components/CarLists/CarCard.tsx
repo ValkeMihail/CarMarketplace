@@ -1,4 +1,3 @@
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendar,
@@ -19,7 +18,7 @@ import { AuthContext } from "../../context/auth/AuthContext";
 import { useState, useEffect, useContext } from "react";
 
 import { showToolTip } from "../Navigation/Footer";
-import {   deleteCar, nrWithoutSpaces } from "../../utils/helpers";
+import { deleteCar, nrWithoutSpaces } from "../../utils/helpers";
 import { CarAvatar } from "../Avatars/CarAvatar";
 import { CarDocument } from "../../../types";
 import { UserAvatar } from "../Avatars/UserAvatar";
@@ -41,11 +40,10 @@ export const CarCard = ({ carsDataArray }: CarCardProps) => {
   }, [carsDataArray]);
 
   const removeCarFromList = (id?: string) => {
-
-    if (!id){
+    if (!id) {
       showToolTip("This ad no longer exists", "red");
       return;
-    } 
+    }
     deleteCar(id);
     setCarDocs(carDocs.filter((carDoc) => carDoc.id !== id));
     if (user?.adsArray && user?.adsArray instanceof Array) {
@@ -57,38 +55,93 @@ export const CarCard = ({ carsDataArray }: CarCardProps) => {
     }
   };
 
-
-  
   return (
     <>
       {carDocs.map((carDoc: CarDocument) => (
-
         <div className="advertise" key={carDoc.id} data-id={carDoc.id}>
-          <CarAvatar carDoc={{ userID: carDoc.userID, images: carDoc.images}}/>
-          <UserAvatar   carDoc={{  userID: carDoc.userID,  userPhoto : carDoc.userPhoto}}/>
-          <AdButtons    carDoc={{ id: carDoc.id, userID: carDoc.userID, images: carDoc.images}}  removeCarFromList={removeCarFromList}/>
+          <CarAvatar
+            carDoc={{ id : carDoc.id ,userID: carDoc.userID, images: carDoc.images }}
+          />
+          <UserAvatar
+            carDoc={{ userID: carDoc.userID, userPhoto: carDoc.userPhoto }}
+          />
+          <AdButtons
+            carDoc={{
+              id: carDoc.id,
+              userID: carDoc.userID,
+              images: carDoc.images,
+            }}
+            removeCarFromList={removeCarFromList}
+          />
           <div className="carInfo">
-            <CarInfoHeader   carDoc={{  make : carDoc.make,  model : carDoc.model,  generation : carDoc.generation,  price : carDoc.price}}/>
+            <CarInfoHeader
+              carDoc={{
+                make: carDoc.make,
+                model: carDoc.model,
+                generation: carDoc.generation,
+                price: carDoc.price,
+              }}
+            />
             <div className="carinfoDescription">
               <div className="carinfoDescription_Container">
-                <CarInfoWrap   faIcon={faCalendar} value={nrWithoutSpaces(carDoc.madeYear)} id="madeYearPlaceholder"  />
-                <CarInfoWrap   faIcon={faGasPump} value={carDoc.fuelType} id="fuelPlaceHolder"  />
-                <CarInfoWrap   faIcon={faBattery4} value={carDoc.capacity} id="capacityPlaceHolder"  >
+                <CarInfoWrap
+                  faIcon={faCalendar}
+                  value={nrWithoutSpaces(carDoc.madeYear)}
+                  id="madeYearPlaceholder"
+                />
+                <CarInfoWrap
+                  faIcon={faGasPump}
+                  value={carDoc.fuelType}
+                  id="fuelPlaceHolder"
+                />
+                <CarInfoWrap
+                  faIcon={faBattery4}
+                  value={carDoc.capacity}
+                  id="capacityPlaceHolder"
+                >
                   <b>{carDoc.fuelType == "electric" ? "kWh" : "cm3"}</b>
                 </CarInfoWrap>
-                <CarInfoWrap   faIcon={faLightbulb} value={carDoc.transmission} id="gearboxTypePlaceHolder"  />
-                <CarInfoWrap   faIcon={faBolt} value={carDoc.power} id="horsePowerPlaceHolder">
+                <CarInfoWrap
+                  faIcon={faLightbulb}
+                  value={carDoc.transmission}
+                  id="gearboxTypePlaceHolder"
+                />
+                <CarInfoWrap
+                  faIcon={faBolt}
+                  value={carDoc.power}
+                  id="horsePowerPlaceHolder"
+                >
                   <b>HP</b>
                 </CarInfoWrap>
               </div>
               <div className="carinfoDescription_Container">
-                <CarInfoWrap   faIcon={faGaugeHigh} value={carDoc.milage} id="milagePlaceHolder"  >
+                <CarInfoWrap
+                  faIcon={faGaugeHigh}
+                  value={carDoc.milage}
+                  id="milagePlaceHolder"
+                >
                   <b>km</b>
                 </CarInfoWrap>
-                <CarInfoWrap   faIcon={faPaintBrush} value={carDoc.color} id="colorPlaceHolder"  />
-                <CarInfoWrap   faIcon={faCircleDot} value={carDoc.driveTrain} id="drivetrainPlaceHolder"  />
-                <CarInfoWrap   faIcon={faCar} value={carDoc.bodyWork} id="bodyworkPlaceHolder"  />
-                <CarInfoWrap   faIcon={faSmog} value={carDoc.EmmisionStandard} id="emissionClassPlaceHolder"  />
+                <CarInfoWrap
+                  faIcon={faPaintBrush}
+                  value={carDoc.color}
+                  id="colorPlaceHolder"
+                />
+                <CarInfoWrap
+                  faIcon={faCircleDot}
+                  value={carDoc.driveTrain}
+                  id="drivetrainPlaceHolder"
+                />
+                <CarInfoWrap
+                  faIcon={faCar}
+                  value={carDoc.bodyWork}
+                  id="bodyworkPlaceHolder"
+                />
+                <CarInfoWrap
+                  faIcon={faSmog}
+                  value={carDoc.EmmisionStandard}
+                  id="emissionClassPlaceHolder"
+                />
               </div>
             </div>
             <div className="tags">
