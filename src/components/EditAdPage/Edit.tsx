@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { db, collection, getDoc, doc } from "../../firebase";
-import { SellOrEditPage } from "../SellPage/Sell";
 import { Car } from "../../../types";
+import { SellOrEditPage } from "../SellPage/Sell";
+import { useState, useEffect } from "react";
+import { collection, db, doc, getDoc } from "../../firebase";
 
 export const Edit = () => {
   const { id } = useParams();
@@ -20,12 +20,23 @@ export const Edit = () => {
     getCarFromDB();
   }, [id]);
 
-  return (
+  return id && car ? (
     <SellOrEditPage
       isSellPage={false}
       carDefault={car}
-      id={id ? id : ""}
+      id={id}
       updateDefaultCar={setCar}
     />
+  ) : (
+    <h1
+      style={{
+        textAlign: "center",
+        marginTop: "10vh",
+        fontSize: "5rem",
+        color: "var(--light-red)",
+      }}
+    >
+      Not Found
+    </h1>
   );
 };

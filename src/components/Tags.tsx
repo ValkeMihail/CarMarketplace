@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import tagSVG from "../../assets/tag.svg";
-import enter_svg from "../../assets/enter.svg";
+import tagSVG from "/src/assets/tag.svg";
+import enter_svg from "/src/assets/enter.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
