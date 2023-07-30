@@ -38,3 +38,45 @@ export interface Car {
   c02Emission: number;
   searchKeywords: string[];
 }
+
+
+export type CarDocument = {
+  tags: string[];
+  make: string;
+  color: string;
+  capacity: number;
+  country: string;
+  dayOfFirstRegistration: number;
+  power: number;
+  countryOfOrigin: string;
+  madeYear: number;
+  version: string;
+  monthOfFirstRegistration: number;
+  c02Emission: number;
+  price: number;
+  userID: string;
+  condition: string;
+  shortDescription: string;
+  driveTrain: string;
+  searchKeywords: string[];
+  model: string;
+  DoorNumber: number;
+  vin: string;
+  images: string[];
+  userPhotoUrl: string;
+  carID: string;
+  youtubeLink: string;
+  transmission: string;
+  generation: string;
+  fuelType: string;
+  longDescription: string;
+  createdAt: Timestamp;
+  city: string;
+  milage: number;
+  bodyWork: string;
+  yearOfFirstRegistration: number;
+  warrantyKm: number;
+  EmmisionStandard: string;
+  id: string;
+  userPhoto: string;
+};

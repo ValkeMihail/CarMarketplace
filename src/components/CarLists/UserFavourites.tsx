@@ -1,6 +1,6 @@
 import { getDoc,db ,doc, onAuthStateChanged, getDocs, collection, auth} from "../../utils/firebase";
 import {useContext ,useState,useEffect} from "react";
-import { CarCard } from "../Navigation/CarCard";
+import { CarCard } from "./CarCard";
 import { AuthContext } from "../../context/auth/AuthContext";
 
 

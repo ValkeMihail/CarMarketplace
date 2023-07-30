@@ -16,11 +16,11 @@ import {
   Query,
 } from "../../utils/firebase";
 import { useState, useEffect } from "react";
-import { CarCard } from "../Navigation/CarCard";
+import { CarCard } from "../../components/CarLists/CarCard";
 import { filterType, SearchProps, sortType } from "../../pages/BuyPage/Buy";
-import { LoadingOverlay } from "../Navigation/LoadingOverlay";
-import { showToolTip } from "../Navigation/Footer";
-import { Car } from "../../../types";
+import { LoadingOverlay } from "../../components/Navigation/LoadingOverlay";
+import { showToolTip } from "../../components/Navigation/Footer";
+import { CarDocument } from "../../../types";
 
 type AllCarsListProps = {
   sort: sortType | null;
@@ -29,14 +29,14 @@ type AllCarsListProps = {
   startAfterRef: [] | number | null;
 };
 
-const CarsList = ({
+const BuyCarList = ({
   sort,
   filter,
   search,
   startAfterRef,
 }: AllCarsListProps) => {
-  const [carDocs, setCarDocs] = useState<DocumentData[]>([]);
-  const [lastDoc, setLastDoc] = useState<QueryDocumentSnapshot<DocumentData> | null>(null);
+  const [carDocs, setCarDocs] = useState<CarDocument[]>([]);
+  const [lastDoc, setLastDoc] = useState<QueryDocumentSnapshot<CarDocument> | null>(null);
   const [requestMoreData, setRequestMoreData] = useState<boolean>(false);
   const [initialLoad, setInitialLoad] = useState<boolean>(true);
   const [snapSize, setSnapSize] = useState<number>(0);
@@ -65,15 +65,15 @@ const CarsList = ({
       setLastDoc(
         carsSnapshot.docs[
           carsSnapshot.docs.length - 1
-        ] as QueryDocumentSnapshot<Car>
+        ] as QueryDocumentSnapshot<CarDocument>
       );
       setSnapSize(carsSnapshot.docs.length);
 
       if (!lastDoc) {
-        setCarDocs(carsWithData as Car[]);
+        setCarDocs(carsWithData as CarDocument[]);
         setInitialLoad(false);
       } else {
-        setCarDocs([...carDocs, ...carsWithData]);
+        setCarDocs([...carDocs as CarDocument[], ...carsWithData as CarDocument[]]);
       }
     };
 
@@ -183,4 +183,4 @@ const CarsList = ({
   );
 };
 
-export default CarsList;
+export default BuyCarList;
