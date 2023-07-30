@@ -31,7 +31,9 @@ export function Buy() {
     sortOrder: "desc",
   });
   const [activeSortOrderAsc, setActiveSortOrderAsc] = useState<boolean>(false);
-  const [CurrentStartAfterRef, setCurrentStartAfterRef] = useState<[] | number>([]);
+  const [CurrentStartAfterRef, setCurrentStartAfterRef] = useState<[] | number | null>(
+    null
+  );
   const [isFilterActive, setIsFilterActive] = useState<boolean>(false);
   const [filterToQuery, setFilterToQuery] = useState<filterType | null>(null);
   const [filter, setFilter] = useState<filterType | null>({
@@ -55,7 +57,6 @@ export function Buy() {
     }
   }, [searchToQuery, filterToQuery, sort]);
 
-
   const setOrder = () => {
     if (activeSortOrderAsc) {
       setSort({ ...sort, sortOrder: "desc" });
@@ -69,11 +70,10 @@ export function Buy() {
     setIsFilterActive(true);
     setFilterToQuery({
       filterProperty: filter ? filter.filterProperty : "price",
-      filterValue: filter ?  filter.filterValue : "1000",
+      filterValue: filter ? filter.filterValue : "1000",
       filterOperator: filter ? filter.filterOperator : ">",
     });
   };
-
 
   const closeSearch = () => {
     setIsSearchActive(false);
@@ -89,12 +89,17 @@ export function Buy() {
     });
   };
 
-
   const changeFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const filterBy = e.target.value;
-    setFilter({ 
-      ...filter ? filter : { filterProperty: "price", filterValue: "1000", filterOperator: ">" },
-      filterProperty: filterBy 
+    setFilter({
+      ...(filter
+        ? filter
+        : {
+            filterProperty: "price",
+            filterValue: "1000",
+            filterOperator: ">",
+          }),
+      filterProperty: filterBy,
     });
     setIsFilterActive(false);
     if (filterBy === "null") {
@@ -158,14 +163,8 @@ export function Buy() {
                   <option value="milage">Milage</option>
                   <option value="madeYear">Year</option>
                 </>
-              ) : filter?.filterProperty === "price" ? (
-                <option value="price">Price</option>
-              ) : filter?.filterProperty === "milage" ? (
-                <option value="milage">Milage</option>
-              ) : filter?.filterProperty === "madeYear" ? (
-                <option value="madeYear">Year</option>
-              ) : (
-                <option value="createdAt">Most Recent</option>
+              ) :(
+                <option value={filter?.filterProperty}></option>
               )}
             </select>
             <div className="ascdesccontainer">
@@ -230,9 +229,16 @@ export function Buy() {
                   <select
                     className="selectWrapper"
                     onChange={(e) =>
-                      setFilter({ 
-                        ...filter ? filter : { filterProperty: "price", filterValue: "1000", filterOperator: ">" },
-                        filterOperator: e.target.value })
+                      setFilter({
+                        ...(filter
+                          ? filter
+                          : {
+                              filterProperty: "price",
+                              filterValue: "1000",
+                              filterOperator: ">",
+                            }),
+                        filterOperator: e.target.value,
+                      })
                     }
                     defaultValue={filter?.filterOperator}
                   >
@@ -243,9 +249,15 @@ export function Buy() {
                 <input
                   id="priceToFilter"
                   onChange={(e) =>
-                    setFilter({ 
-                      ...filter ? filter : { filterProperty: "price", filterValue: "1000", filterOperator: ">" },
-                      filterValue: e.target.value 
+                    setFilter({
+                      ...(filter
+                        ? filter
+                        : {
+                            filterProperty: "price",
+                            filterValue: "1000",
+                            filterOperator: ">",
+                          }),
+                      filterValue: e.target.value,
                     })
                   }
                   type="text"
