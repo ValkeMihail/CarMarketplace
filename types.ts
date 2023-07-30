@@ -1,4 +1,4 @@
-import { Timestamp } from './src/firebase';
+import { Timestamp } from './src/utils/firebase';
 
 export interface Car {
   condition: string;

@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { Car } from "../../../types";
 import { SellOrEditPage } from "../SellPage/Sell";
 import { useState, useEffect } from "react";
-import { collection, db, doc, getDoc } from "../../firebase";
+import { collection, db, doc, getDoc } from "../../utils/firebase";
 
 export const Edit = () => {
   const { id } = useParams();

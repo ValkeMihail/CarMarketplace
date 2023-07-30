@@ -20,7 +20,7 @@ import {
   createUserWithEmailAndPassword,
   updateDoc,
   increment
-} from "./firebase";
+} from "../../utils/firebase";
 
 
 

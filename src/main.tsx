@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './utils/serviceWorker.ts';
 
 serviceWorker.register();
 

@@ -4,13 +4,13 @@ import { faMessage , faHeart,faPenToSquare, faCalendar, faEuroSign, faGasPump,fa
 
 import user_default from "../../assets/user_default.svg";
 
-import { AuthContext } from "../../AuthContext";
+import { AuthContext } from "../../context/auth/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useState , useEffect, useContext } from "react";
 
-import {  arrayRemove, arrayUnion, auth,  db,  doc, updateDoc } from "../../firebase";
+import {  arrayRemove, arrayUnion, auth,  db,  doc, updateDoc } from "../../utils/firebase";
 import { showToolTip } from "./Footer";
-import { NWHS, NWS, createChat, deleteCar } from "../../Helpers";
+import { NWHS, NWS, createChat, deleteCar } from "../../utils/helpers";
 
 
 interface CarCardProps {

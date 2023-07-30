@@ -1,7 +1,7 @@
-import { getDoc,db ,doc, onAuthStateChanged, getDocs, collection, auth} from "../../firebase";
+import { getDoc,db ,doc, onAuthStateChanged, getDocs, collection, auth} from "../../utils/firebase";
 import {useContext ,useState,useEffect} from "react";
 import { CarCard } from "../Navigation/CarCard";
-import { AuthContext } from "../../AuthContext";
+import { AuthContext } from "../../context/auth/AuthContext";
 
 
 

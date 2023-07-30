@@ -1,10 +1,10 @@
 import { useEffect ,useState} from 'react';
 import {  useParams  } from 'react-router-dom';
 import user_default from '../../assets/user_default.svg';
-import {doc, db ,getDoc,collection, query, where, getDocs, startAfter, limit,orderBy } from '../../firebase';
-import { CarCard } from '../Navigation/CarCard';
-import { LoadingOverlay } from '../Navigation/LoadingOverlay';
-import { showToolTip } from '../Navigation/Footer';
+import {doc, db ,getDoc,collection, query, where, getDocs, startAfter, limit,orderBy } from '../../utils/firebase';
+import { CarCard } from '../../components/Navigation/CarCard';
+import { LoadingOverlay } from '../../components/Navigation/LoadingOverlay';
+import { showToolTip } from '../../components/Navigation/Footer';
 
 
 

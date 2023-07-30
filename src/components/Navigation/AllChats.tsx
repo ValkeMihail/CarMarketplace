@@ -6,7 +6,7 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import {useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { auth, collection, db, doc, getDoc, getDocs, limit, onSnapshot, orderBy, query, where } from "../../firebase";
+import { auth, collection, db, doc, getDoc, getDocs, limit, onSnapshot, orderBy, query, where } from "../../utils/firebase";
 import user_default from "../../assets/user_default.svg";
 
 

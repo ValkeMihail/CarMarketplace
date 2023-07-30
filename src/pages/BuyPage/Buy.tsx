@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import BuyCarsList from "./BuyCarsList";
+import CarsList from "../../components/CarLists/BuyCarsList";
 import { FilterWrapContainer } from "../../containers/buyPageContainers/FilterWrapContainer";
 import { SortWrapContainer } from "../../containers/buyPageContainers/SortWrapContainer";
 import { SearchWrapContainer } from "../../containers/buyPageContainers/SearchWrapContainer";
@@ -148,7 +148,7 @@ export function Buy() {
         />
       </div>
       <div className="buyScreen">
-        <BuyCarsList
+        <CarsList
           search={searchToQuery}
           sort={sort}
           filter={filterToQuery}

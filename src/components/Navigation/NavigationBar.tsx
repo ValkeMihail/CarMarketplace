@@ -8,10 +8,10 @@ import user_default from "../../assets/user_default.svg";
 import { useState ,useEffect, useContext, useCallback} from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { AuthContext } from "../../AuthContext";
+import { AuthContext } from "../../context/auth/AuthContext";
 import { AllChats } from "./AllChats";
 
-import { auth } from "../../firebase";
+import { auth } from "../../utils/firebase";
 
 
 /**

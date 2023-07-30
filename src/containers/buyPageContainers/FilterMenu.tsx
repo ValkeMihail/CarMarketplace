@@ -1,4 +1,4 @@
-import { filterType } from "../../components/BuyPage/buy";
+import { filterType } from "../../pages/BuyPage/Buy";
 
 
 

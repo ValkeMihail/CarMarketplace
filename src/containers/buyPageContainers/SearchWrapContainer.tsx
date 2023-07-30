@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SearchProps } from "../../components/BuyPage/buy";
+import { SearchProps } from "../../pages/BuyPage/Buy";
 import { faClose, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 type SearchWrapContainerProps = {

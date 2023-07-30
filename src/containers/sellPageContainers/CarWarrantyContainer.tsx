@@ -1,6 +1,6 @@
 import { Car } from "../../../types";
 import { NumericInput } from "../../components/Inputs/NumericInput";
-import { errorMessagesSellPage } from "../../components/SellPage/Sell";
+import { errorMessagesSellPage } from "../../pages/SellPage/Sell";
 
 
 

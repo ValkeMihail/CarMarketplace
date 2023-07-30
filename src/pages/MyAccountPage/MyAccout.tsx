@@ -4,14 +4,14 @@ import user_default from '../../assets/user_default.svg';
 
 import React, { useState,useRef,useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../AuthContext';
+import { AuthContext } from '../../context/auth/AuthContext';
 
 import { auth, collection, db, deleteDoc, doc, EmailAuthProvider, getDocs, GoogleAuthProvider , query, reauthenticateWithCredential, 
-    sendPasswordResetEmail, updateEmail, where,reauthenticateWithPopup} from '../../firebase';
+    sendPasswordResetEmail, updateEmail, where,reauthenticateWithPopup} from '../../utils/firebase';
 
-import { MyCarList } from './myAccountCarList';
-import {UserFavourites} from './UserFavourites';
-import {showToolTip} from '../Navigation/Footer';
+import { MyCarList } from '../../components/CarLists/myAccountCarList';
+import {UserFavourites} from '../../components/CarLists/UserFavourites';
+import {showToolTip} from '../../components/Navigation/Footer';
 
 
 export const MyAccount = () => {

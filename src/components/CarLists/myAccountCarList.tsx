@@ -1,4 +1,4 @@
-import { db , getDocs, limit, orderBy, startAfter,where,query ,auth ,collection, onAuthStateChanged} from "../../firebase";
+import { db , getDocs, limit, orderBy, startAfter,where,query ,auth ,collection, onAuthStateChanged} from "../../utils/firebase";
 import {useEffect,useState} from "react";
 import { CarCard} from "../Navigation/CarCard";
 import { LoadingOverlay } from "../Navigation/LoadingOverlay";

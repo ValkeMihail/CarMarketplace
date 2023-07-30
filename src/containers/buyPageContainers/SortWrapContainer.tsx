@@ -1,6 +1,6 @@
 import { faSortAsc, faSortDesc } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { filterType, sortType } from "../../components/BuyPage/buy";
+import { filterType, sortType } from "../../pages/BuyPage/Buy";
 
 
 type SortWrapContainerProps = {

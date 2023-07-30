@@ -2,13 +2,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye,faEyeLowVision } from '@fortawesome/free-solid-svg-icons';
 import googlePng from '../../assets/google.svg';
 
-import { AuthContext } from '../../AuthContext';
-import { showToolTip } from '../Navigation/Footer';
+import { AuthContext } from '../../context/auth/AuthContext';
+import { showToolTip } from '../../components/Navigation/Footer';
 
 import {  useNavigate } from 'react-router-dom';
 import { useState ,useContext , useEffect} from 'react';
 
-import { auth, sendPasswordResetEmail } from '../../firebase';
+import { auth, sendPasswordResetEmail } from '../../utils/firebase';
 
 
 interface errorMessagesLoginForm {

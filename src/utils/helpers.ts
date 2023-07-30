@@ -1,4 +1,4 @@
-import { showToolTip } from "./components/Navigation/Footer";
+import { showToolTip } from "../components/Navigation/Footer";
 import { 
     Timestamp ,
     collection,

@@ -2,20 +2,20 @@ import { Footer } from './components/Navigation/Footer.tsx';
 import './App.css';
 import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { AuthProvider } from './AuthContext.tsx';
+import { AuthProvider } from './context/auth/AuthContext.tsx';
 import  NavigationBar  from './components/Navigation/NavigationBar.tsx';
 import { LoadingOverlay } from './components/Navigation/LoadingOverlay.tsx';
 
 
-const Home = lazy(() => import('./components/HomePage/Index.tsx').then(module => ({ default: module.Home })));
-const Login = lazy(() => import('./components/LoginPage/Login').then(module => ({ default: module.Login })));
-const Buy = lazy(() => import('./components/BuyPage/buy').then(module => ({ default: module.Buy })));
-const SellOrEditPage = lazy(() => import('./components/SellPage/Sell').then(module => ({ default: module.SellOrEditPage })));
-const MyAccount = lazy(() => import('./components/MyAccountPage/myAccout.tsx').then(module => ({ default: module.MyAccount })));
-const Edit = lazy(() => import('./components/EditAdPage/Edit.tsx').then(module => ({ default: module.Edit })));
-const CarAd = lazy(() => import('./components/CarAdPage/CarAd').then(module => ({ default: module.CarAd })));
-const User = lazy(() => import('./components/UserProfilePage/User.tsx').then(module => ({ default: module.User })));
-const Chat = lazy(() => import('./components/ChatPage/Chat.tsx').then(module => ({ default: module.Chat })));
+const Home = lazy(() => import('./pages/HomePage/Index.tsx').then(module => ({ default: module.Home })));
+const Login = lazy(() => import('./pages/LoginPage/Login.tsx').then(module => ({ default: module.Login })));
+const Buy = lazy(() => import('./pages/BuyPage/Buy.tsx').then(module => ({ default: module.Buy })));
+const SellOrEditPage = lazy(() => import('./pages/SellPage/Sell.tsx').then(module => ({ default: module.SellOrEditPage })));
+const MyAccount = lazy(() => import('./pages/MyAccountPage/MyAccout.tsx').then(module => ({ default: module.MyAccount })));
+const Edit = lazy(() => import('./pages/EditAdPage/Edit.tsx').then(module => ({ default: module.Edit })));
+const CarAd = lazy(() => import('./pages/CarAdPage/CarAd.tsx').then(module => ({ default: module.CarAd })));
+const User = lazy(() => import('./pages/UserProfilePage/User.tsx').then(module => ({ default: module.User })));
+const Chat = lazy(() => import('./pages/ChatPage/Chat.tsx').then(module => ({ default: module.Chat })));
 
 
 function App() {

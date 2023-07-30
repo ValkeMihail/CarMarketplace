@@ -1,7 +1,7 @@
 import { Car } from "../../../types";
 import { FormInputText } from "../../components/Inputs/FormInputText";
 import { Select } from "../../components/Inputs/Select";
-import { errorMessagesSellPage } from "../../components/SellPage/Sell";
+import { errorMessagesSellPage } from "../../pages/SellPage/Sell";
 import lightbulb from "../../assets/lightbulb.png"
 
 type CarBodyContainerProps = {

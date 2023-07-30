@@ -1,4 +1,4 @@
-import { auth, collection, db, doc, getDoc, limit, orderBy, query,getDocs } from "../../firebase";
+import { auth, collection, db, doc, getDoc, limit, orderBy, query,getDocs } from "../../utils/firebase";
 
 import { useEffect ,useState} from "react";
 import { useNavigate } from "react-router-dom";

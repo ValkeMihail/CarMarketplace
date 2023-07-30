@@ -5,7 +5,7 @@ import tagsSVG from "../../assets/tag.svg";
 import user_default from "../../assets/user_default.svg";
 
 import { Car } from "../../../types";
-import { AuthContext } from "../../AuthContext";
+import { AuthContext } from "../../context/auth/AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeft,
@@ -17,8 +17,8 @@ import {
   faMessage,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { showToolTip } from "../Navigation/Footer";
-import { createChat } from "../../Helpers";
+import { showToolTip } from "../../components/Navigation/Footer";
+import { createChat } from "../../utils/helpers";
 
 import {
   getDoc,
@@ -30,7 +30,7 @@ import {
   updateDoc,
   auth,
   arrayUnion,
-} from "../../firebase";
+} from "../../utils/firebase";
 
 export const CarAd = () => {
   const { user, setUSER } = useContext(AuthContext);

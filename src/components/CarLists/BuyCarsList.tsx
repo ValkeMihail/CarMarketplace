@@ -14,10 +14,10 @@ import {
   QueryDocumentSnapshot,
   DocumentData,
   Query,
-} from "../../firebase";
+} from "../../utils/firebase";
 import { useState, useEffect } from "react";
 import { CarCard } from "../Navigation/CarCard";
-import { filterType, SearchProps, sortType } from "./buy";
+import { filterType, SearchProps, sortType } from "../../pages/BuyPage/Buy";
 import { LoadingOverlay } from "../Navigation/LoadingOverlay";
 import { showToolTip } from "../Navigation/Footer";
 import { Car } from "../../../types";
@@ -29,7 +29,7 @@ type AllCarsListProps = {
   startAfterRef: [] | number | null;
 };
 
-const BuyCarsList = ({
+const CarsList = ({
   sort,
   filter,
   search,
@@ -183,4 +183,4 @@ const BuyCarsList = ({
   );
 };
 
-export default BuyCarsList;
+export default CarsList;

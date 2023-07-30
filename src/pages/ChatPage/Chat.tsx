@@ -2,16 +2,16 @@ import { ChangeEvent, useEffect, useState ,useRef} from "react";
 import { useParams , useNavigate} from "react-router-dom";
 
 import { db , collection, query, onSnapshot, orderBy, auth ,addDoc,getDownloadURL, doc, Timestamp, updateDoc, arrayUnion, limit, getDoc, deleteDoc, 
-        uploadBytes, ref, storage, deleteObject} from "../../firebase";
+        uploadBytes, ref, storage, deleteObject} from "../../utils/firebase";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck,  faEllipsisVertical, faFile, faFileAlt, faFileArchive, faFileAudio,  faFileExcel, faFilePdf, faFilePowerpoint, 
         faFileVideo, faFileWord, faImage, faTrashCan, faX } from "@fortawesome/free-solid-svg-icons";
 import user_default from "../../assets/user_default.svg";
 
-import {  User } from "../../AuthContext";
-import { getTimeAgo } from "../../Helpers";
-import { showToolTip } from "../Navigation/Footer";
+import {  User } from "../../context/auth/AuthContext";
+import { getTimeAgo } from "../../utils/helpers";
+import { showToolTip } from "../../components/Navigation/Footer";
 
 
 

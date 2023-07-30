@@ -1,6 +1,6 @@
 import { Car } from "../../../types";
 import { FormInputText } from "../../components/Inputs/FormInputText";
-import { errorMessagesSellPage } from "../../components/SellPage/Sell";
+import { errorMessagesSellPage } from "../../pages/SellPage/Sell";
 
 
 type CarHistoryContainerProps = {
