@@ -37,7 +37,7 @@ export const CarAd = () => {
             if(chatId != ""){
                 navigate(`/chats/chat/${chatId}`);
             }else{
-                showToolTip("error", "Error creating chat");
+                showToolTip("Error creating chat", "red");
             }
     };
 

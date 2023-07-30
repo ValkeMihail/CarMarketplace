@@ -8,20 +8,14 @@ interface NumericInputProps {
     maxLength?: number;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     Name?  : string;
-    defaultValueNr?: string| number | undefined;
-    
+    defaultValueNr?: string | number;
 }
-/**
- * This component is used to display a numeric input field.
- */
+
+
 export const NumericInput: React.FC<NumericInputProps> = ({ max, id, placeholder ,maxLength , onChange,Name,defaultValueNr}) => {
 
 
 
-    /**
-     *  This function is used to format the number in the input field.
-     * @param e  The event that is triggered when the user types in the input field.
-     */
     const formatNumber = (e: React.FormEvent<HTMLInputElement>) => {
         const target = e.target as HTMLInputElement;
         let value = target.value.replaceAll(/\D/g, "");

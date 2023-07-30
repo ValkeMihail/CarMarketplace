@@ -109,7 +109,7 @@ export async function createChat (recipientId: string , url:String, carImageURL 
                     firstMessageImageURL: carImageURL,
                 });
             } catch (error) {
-                showToolTip("error", "Error creating chat");
+                showToolTip("Error creating chat", "red");
                 chatId = "";
             }
     }

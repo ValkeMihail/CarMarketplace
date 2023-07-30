@@ -1,0 +1,40 @@
+import { Timestamp } from './src/firebase';
+
+export interface Car {
+  condition: string;
+  carID: string;
+  userID: string;
+  userPhotoUrl: string;
+  vin: string;
+  milage: number;
+  dayOfFirstRegistration: number;
+  monthOfFirstRegistration: number;
+  yearOfFirstRegistration: number;
+  generation: string;
+  make: string;
+  model: string;
+  fuelType: string;
+  madeYear: number;
+  power: number;
+  capacity: number;
+  DoorNumber: number;
+  transmission: string;
+  driveTrain: string;
+  color: string;
+  price: number;
+  shortDescription: string;
+  images: string[];
+  tags: string[];
+  version: string;
+  EmmisionStandard: string;
+  bodyWork: string;
+  youtubeLink: string;
+  longDescription?: string;
+  countryOfOrigin: string;
+  warrantyKm: number;
+  country: string;
+  city: string;
+  createdAt: Timestamp;
+  c02Emission: number;
+  searchKeywords: string[];
+}
