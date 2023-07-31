@@ -2310,6 +2310,7 @@ button.second-container button.form-input {
 
 .tags {
     margin: 1em 0 1em 0;
+    height: 2vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
