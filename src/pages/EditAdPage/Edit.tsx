@@ -3,6 +3,7 @@ import { Car } from "../../../types";
 import { SellOrEditPage } from "../SellPage/Sell";
 import { useState, useEffect } from "react";
 import { collection, db, doc, getDoc } from "../../utils/firebase";
+import NotFound from "../../components/Navigation/NotFound";
 
 export const Edit = () => {
   const { id } = useParams();
@@ -27,16 +28,5 @@ export const Edit = () => {
       id={id}
       updateDefaultCar={setCar}
     />
-  ) : (
-    <h1
-      style={{
-        textAlign: "center",
-        marginTop: "10vh",
-        fontSize: "5rem",
-        color: "var(--light-red)",
-      }}
-    >
-      Not Found
-    </h1>
-  );
+  ) : (<NotFound/>)
 };

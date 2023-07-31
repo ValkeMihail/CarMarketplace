@@ -3416,14 +3416,15 @@ button.second-container button.form-input {
     position: relative;
     flex-direction: column;
     margin-bottom: 10px;
-    border: 1px solid var(--green);
-    background-color: var(--black30);
+    border: 1px solid var(--white40);
+    background-color: var(--white15);
     width: 25em;
     padding: 1em;
   }
   .otherUser {
-    border: 1px solid var(--white40);
-    background-color: var(--white15);
+    border: 1px solid var(--green);
+    background-color: var(--black30);
+
     align-self: flex-end;
   }
   .chat-message p {
