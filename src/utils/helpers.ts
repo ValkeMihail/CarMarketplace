@@ -1,4 +1,3 @@
-import { showToolTip } from "../components/Navigation/Footer";
 import {
   Timestamp,
   collection,
@@ -123,3 +122,22 @@ export const deleteCar = async (id: string) => {
   });
   
 };
+
+
+export function showToolTip(message: string , color : string) {
+  const tooltip = document.createElement("div");
+  tooltip.textContent = message;
+  tooltip.style.position = "fixed";
+  tooltip.style.bottom = "10px";
+  tooltip.style.left = "50%";
+  tooltip.style.transform = "translateX(-50%)";
+  tooltip.style.backgroundColor = "#333";
+  tooltip.style.color = color;
+  tooltip.style.padding = "10px";
+  tooltip.style.borderRadius = "5px";
+  tooltip.style.zIndex = "9999";
+  document.body.appendChild(tooltip);
+  setTimeout(function() {
+      document.body.removeChild(tooltip);
+  }, 3000);
+}
