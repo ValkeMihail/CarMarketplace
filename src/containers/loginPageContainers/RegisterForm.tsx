@@ -1,10 +1,14 @@
+import { PasswordContainer } from "./PasswordContainer";
+import { PhoneNumberContainer } from "./PhoneNumberContainer";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/auth/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeLowVision } from "@fortawesome/free-solid-svg-icons";
+import { TextInput } from "../../components/Inputs/TextInput";
+import { SelectContainer } from "./SelectContainer";
+import { EmailContainer } from "./EmailContainer";
+import { ConfirmPasswordContainer } from "./ConfirmPasswordContainer";
 
-interface errorMessagesRegisterForm {
+export interface errorMessagesRegisterForm {
   username: string;
   email: string;
   password: string;
@@ -13,15 +17,25 @@ interface errorMessagesRegisterForm {
   phoneNumber: string;
 }
 
+export type UserData = {
+  username: string;
+  email: string;
+  phoneCode: string;
+  phoneNumber: string;
+};
 
+export type Credentials = {
+  password: string;
+  confirmPassword: string;
+};
 
 export const RegisterSection = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [credentials, setCredentials] = useState({
+  const [credentials, setCredentials] = useState<Credentials>({
     password: "",
     confirmPassword: "",
   });
-  const [userData, setUserData] = useState({
+  const [userData, setUserData] = useState<UserData>({
     username: "",
     email: "",
     phoneCode: "",
@@ -127,7 +141,6 @@ export const RegisterSection = () => {
       });
       navigate("/");
     } catch (error) {
-
       setErrorMessages((prevErrors) => ({
         ...prevErrors,
         email: (error as Error).message as string,
@@ -139,185 +152,48 @@ export const RegisterSection = () => {
     <div id="signup">
       <div id="registerForm" className="registerForm">
         <h1>Create an accout</h1>
-        <div className="form-input">
-          <label>Username:</label>
-          <input
-            onChange={(e) => {
-              setUserData({ ...userData, username: e.target.value });
-              setErrorMessages((prevErrors) => ({
-                ...prevErrors,
-                username: "",
-              }));
-            }}
-            id="username"
-            type="text"
-            placeholder="Username"
-          />
-          {errorMessages.username && (
-            <div className="errorMessage">{errorMessages.username}</div>
-          )}
-        </div>
-        <div className="form-input">
-          <label>Email:</label>
-          <input
-            onChange={(e) => {
-              setUserData({ ...userData, email: e.target.value });
-              setErrorMessages((prevErrors) => ({
-                ...prevErrors,
-                email: "",
-              }));
-            }}
-            id="email"
-            type="email"
-            placeholder="Email"
-          />
-
-          {errorMessages.email && (
-            <div className="errorMessage">{errorMessages.email}</div>
-          )}
-        </div>
-        <div id="phoneCode" className="form-input">
-          <label>Country code:</label>
-          <div>
-            <select
-              onChange={(e) => {
-                setUserData({ ...userData, phoneCode: e.target.value });
-                setErrorMessages((prevErrors) => ({
-                  ...prevErrors,
-                  phoneCode: "",
-                }));
-              }}
-              className="phoneCodeSelect"
-              name="phoneCodeSelect"
-              id="phoneCodeSelect"
-              defaultValue=""
-            >
-              <option value=""> Select Country Code</option>
-              <option value="+380">Ukraine +380</option>
-              <option value="+33">France +33</option>
-              <option value="+49">Germany +49</option>
-              <option value="+385">Croatia +385</option>
-              <option value="+48">Poland +48</option>
-              <option value="+31">Netherlands +31</option>
-              <option value="+41">Switzerland +41</option>
-              <option value="+32">Belgium +32</option>
-              <option value="+44">UK +44</option>
-              <option value="+39">Italy +39</option>
-              <option value="+381">Serbia +381</option>
-              <option value="+30">Greece +30</option>
-              <option value="+45">Denmark +45</option>
-              <option value="+46">Sweden +46</option>
-              <option value="+47">Norway +47</option>
-              <option value="+383">Kosovo +383</option>
-              <option value="+354">Iceland +354</option>
-              <option value="+356">Malta +356</option>
-              <option value="+420">Czechia +420</option>
-              <option value="+358">Finland +358</option>
-              <option value="+43">Austria +43</option>
-              <option value="+40">Romania +40</option>
-              <option value="+355">Albania +355</option>
-              <option value="+375">Belarus +375</option>
-              <option value="+36">Hungary +36</option>
-              <option value="+377">Monaco +377</option>
-              <option value="+379">Vatican City +379</option>
-              <option value="+352">Luxembourg +352</option>
-              <option value="+359">Bulgaria +359</option>
-              <option value="+373">Moldova +373</option>
-              <option value="+382">Montenegro +382</option>
-              <option value="+387">Bosnia +387</option>
-              <option value="+370">Lithuania +370</option>
-              <option value="+372">Estonia +372</option>
-              <option value="+353">Republic of Ireland +353</option>
-              <option value="+386">Slovenia +386</option>
-              <option value="+371">Latvia +371</option>
-              <option value="+421">Slovakia +421</option>
-              <option value="+376">Andorra +376</option>
-              <option value="+389">North Macedonia +389</option>
-              <option value="+423">Liechtenstein +423</option>
-              <option value="+350">Gibraltar +350</option>
-              <option value="+298">Faroe Islands +298</option>
-              <option value="+378">San Marino +378</option>
-            </select>
-            {errorMessages.phoneCode && (
-              <div className="errorMessage">{errorMessages.phoneCode}</div>
-            )}
-          </div>
-        </div>
-        <div className="form-input">
-          <label>Phone Nr:</label>
-          <input
-            onChange={(e) => {
-              setUserData({ ...userData, phoneNumber: e.target.value });
-              setErrorMessages((prevErrors) => ({
-                ...prevErrors,
-                phoneNumber: "",
-              }));
-            }}
-            id="phoneNr"
-            type="text"
-            placeholder="Phone Number"
-          />
-          {errorMessages.phoneNumber && (
-            <div className="errorMessage">{errorMessages.phoneNumber}</div>
-          )}
-        </div>
-        <div className="form-input">
-          <label>Password:</label>
-          <input
-            onChange={(e) => {
-              setCredentials({ ...credentials, password: e.target.value });
-              setErrorMessages((prevErrors) => ({
-                ...prevErrors,
-                password: "",
-              }));
-            }}
-            id="password"
-            type={showPassword ? "text" : "password"}
-            placeholder="Password"
-          />
-          <span
-            onClick={() => {
-              showPassword ? setShowPassword(false) : setShowPassword(true);
-            }}
-          >
-            <FontAwesomeIcon icon={showPassword ? faEye : faEyeLowVision} />
-          </span>
-
-          {errorMessages.password && (
-            <div className="errorMessage">{errorMessages.password}</div>
-          )}
-        </div>
-
-        <div className="form-input">
-          <label>Confirm Password:</label>
-          <input
-            onChange={(e) => {
-              setCredentials({
-                ...credentials,
-                confirmPassword: e.target.value,
-              });
-
-              setErrorMessages((prevErrors) => ({
-                ...prevErrors,
-                confirmPassword: "",
-              }));
-            }}
-            id="passwordc"
-            type={showPassword ? "text" : "password"}
-            placeholder="Password"
-          />
-          <span
-            onClick={() => {
-              showPassword ? setShowPassword(false) : setShowPassword(true);
-            }}
-          >
-            <FontAwesomeIcon icon={showPassword ? faEye : faEyeLowVision} />
-          </span>
-          {errorMessages.confirmPassword && (
-            <div className="errorMessage">{errorMessages.confirmPassword}</div>
-          )}
-        </div>
-
+        <TextInput
+          errorMessages={errorMessages}
+          label="Username"
+          name="username"
+          setErrorMessages={setErrorMessages}
+          setUserData={setUserData}
+          userData={userData}
+        />
+        <EmailContainer
+          errorMessages={errorMessages}
+          setErrorMessages={setErrorMessages}
+          setUserData={setUserData}
+          userData={userData}
+        />
+        <SelectContainer
+          errorMessages={errorMessages}
+          setErrorMessages={setErrorMessages}
+          setUserData={setUserData}
+          userData={userData}
+        />
+        <PhoneNumberContainer
+          errorMessages={errorMessages}
+          setErrorMessages={setErrorMessages}
+          setUserData={setUserData}
+          userData={userData}
+        />
+        <PasswordContainer
+          errorMessages={errorMessages}
+          credentials={credentials}
+          setCredentials={setCredentials}
+          showPassword={showPassword}
+          setShowPassword={setShowPassword}
+          setErrorMessages={setErrorMessages}
+        />
+        <ConfirmPasswordContainer
+          errorMessages={errorMessages}
+          credentials={credentials}
+          setCredentials={setCredentials}
+          showPassword={showPassword}
+          setShowPassword={setShowPassword}
+          setErrorMessages={setErrorMessages}
+        />
         <div className="buttonwrap">
           <button onClick={handleRegister} className="btn btn-social">
             SignUp
