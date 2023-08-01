@@ -1,5 +1,5 @@
 import { DocumentData } from "firebase/firestore"
-import userDefault from "../../assets/user_default.png" 
+import userDefault from "../../assets/user_default.svg" 
 
 type UserProfileContainerProps = {
   userData: DocumentData | null; 

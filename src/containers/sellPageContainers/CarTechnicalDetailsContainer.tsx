@@ -2,7 +2,7 @@ import { Car } from "../../../types";
 import { FormInputText } from "../../components/Inputs/FormInputText";
 import { NumericInput } from "../../components/Inputs/NumericInput";
 import { Select } from "../../components/Inputs/Select";
-import { errorMessagesSellPage } from "../../pages/SellPage/Sell";
+import { errorMessagesSellPage } from '../../pages/SellPage/SellOrEditPageProps';
 
 type CarTechnicalDetailsContainerProps = {
   carDefault?: Partial<Car> | null;
