@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MyCarList } from "../../components/CarLists/myAccountCarList";
+import { CurrentUserAds } from "../../components/CarLists/myAccountCarList";
 import { UserFavourites } from "../../components/CarLists/UserFavourites";
 import { VerifyAlert } from "../../containers/myAccountContainers/VerifyAlert";
 import ProfileWrapHero from "../../containers/myAccountContainers/ProfileWrapHero";
@@ -51,7 +51,7 @@ export const MyAccount = () => {
           </div>
         ) : (
           <div id="profileAds">
-            <MyCarList />
+            <CurrentUserAds />
           </div>
         )}
       </div>
