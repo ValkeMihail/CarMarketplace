@@ -1,10 +1,13 @@
-import { UserData, errorMessagesRegisterForm } from "./RegisterForm";
+import { UserData, errorMessagesRegisterForm } from "../../containers/loginPageContainers/RegisterForm";
 
 type SelectContainerProps = {
-  setUserData: (userData: UserData) => void;
-  userData: UserData;
-  setErrorMessages: (errorMessages: errorMessagesRegisterForm) => void;
-  errorMessages: errorMessagesRegisterForm;
+  setUserData?: (userData: UserData) => void;
+  userData?: UserData;
+  setErrorMessages?: (errorMessages: errorMessagesRegisterForm) => void;
+  errorMessages?: errorMessagesRegisterForm;
+  defaultValue?: string;
+  onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  ref?: React.RefObject<HTMLSelectElement>;
 };
 
 
@@ -12,13 +15,16 @@ type SelectContainerProps = {
 
 export function SelectContainer({
   setUserData,
+  ref,
   errorMessages,
   userData,
+  onChange,
   setErrorMessages,
+  defaultValue
   } : SelectContainerProps) {
 
     const resetErorrMessages = () => {
-      setErrorMessages({... errorMessages, phoneCode: ""});
+      if (errorMessages && setErrorMessages) setErrorMessages({... errorMessages, phoneCode: ""});
     } 
 
   return (
@@ -26,16 +32,12 @@ export function SelectContainer({
       <label>Country code:</label>
       <div>
         <select 
-          onChange={e => {
-            setUserData({ ...userData,
-              phoneCode: e.target.value
-            });
-            resetErorrMessages();
-          }} 
+          ref= {ref}
+          onChange={onChange ? undefined : e => {setUserData && userData && setUserData({ ...userData,    phoneCode: e.target.value  });  resetErorrMessages()}} 
           className="phoneCodeSelect" 
           name="phoneCodeSelect" 
           id="phoneCodeSelect" 
-          defaultValue=""
+          defaultValue= {defaultValue ? defaultValue : ""}
         >
           <option value=""> Select Country Code</option>
           <option value="+380">Ukraine +380</option>
@@ -83,7 +85,7 @@ export function SelectContainer({
           <option value="+298">Faroe Islands +298</option>
           <option value="+378">San Marino +378</option>
         </select>
-        {errorMessages.phoneCode && <div className="errorMessage">{errorMessages.phoneCode}</div>}
+        {errorMessages?.phoneCode ? <div className="errorMessage">{errorMessages.phoneCode}</div> : null}
       </div>
     </div>
   );

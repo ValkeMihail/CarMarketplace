@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../context/auth/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { TextInput } from "../../components/Inputs/TextInput";
-import { SelectContainer } from "./SelectContainer";
+import { SelectContainer } from "../../components/Inputs/SelectContainer";
 import { EmailContainer } from "./EmailContainer";
 import { ConfirmPasswordContainer } from "./ConfirmPasswordContainer";
 
