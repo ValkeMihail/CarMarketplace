@@ -5,7 +5,7 @@ import {
   onAuthStateChanged,
   getDocs,
   collection,
-  auth,
+  auth
 } from "../../utils/firebase";
 import { useContext, useState, useEffect } from "react";
 import { CarCardsList } from "./CarCard";
