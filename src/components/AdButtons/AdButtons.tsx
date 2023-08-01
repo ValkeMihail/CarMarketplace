@@ -2,10 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faMessage, faPenToSquare, faTrash } from "@fortawesome/free-solid-svg-icons";
 import {arrayRemove, arrayUnion, auth, db, doc, updateDoc} from "../../utils/firebase";
 import { useNavigate } from "react-router-dom";
-import { showToolTip } from "../Navigation/Footer";
 import { AuthContext } from "../../context/auth/AuthContext";
 import { useContext } from "react";
-import { createChat } from "../../utils/helpers";
+import { createChat, showToolTip } from "../../utils/helpers";
 
 type AdButtonsProps = {
   carDoc : { 

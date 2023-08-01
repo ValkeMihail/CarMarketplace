@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { DocumentData, auth } from "../../utils/firebase";
 import { useNavigate } from "react-router-dom";
-import { getTimeAgo } from "../../utils/helpers";
+import { getTimeAgo, showToolTip } from "../../utils/helpers";
 import { useState } from "react";
 import {
   faCheck,
@@ -17,7 +17,6 @@ import {
   faTrashAlt,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
-import { showToolTip } from "../../components/Navigation/Footer";
 
 
 type ChatMessageProps = {

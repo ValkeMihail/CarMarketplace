@@ -2,7 +2,6 @@
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { User } from "../../context/auth/AuthContext";
-import { showToolTip } from "../../components/Navigation/Footer";
 import {
   db,
   collection,
@@ -25,6 +24,7 @@ import {
 import { ConversationDetailsContainer } from "../../containers/chatPageContainers/ConversationDetailsContainer";
 import ChatMessage from "../../containers/chatPageContainers/ChatMessage";
 import { MessageForm } from "../../containers/chatPageContainers/MessageForm";
+import { showToolTip } from "../../utils/helpers";
 
 export const Chat = () => {
   const chatID = useParams<{ chatID: string }>().chatID;

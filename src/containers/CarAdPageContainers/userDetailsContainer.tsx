@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/auth/AuthContext";
 import { useContext } from "react";
-import { showToolTip } from "../../components/Navigation/Footer";
-import { createChat } from "../../utils/helpers";
+import { createChat, showToolTip } from "../../utils/helpers";
 import { arrayRemove, arrayUnion, auth, db, doc, updateDoc } from "../../utils/firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEuroSign, faHeart, faMessage } from "@fortawesome/free-solid-svg-icons";

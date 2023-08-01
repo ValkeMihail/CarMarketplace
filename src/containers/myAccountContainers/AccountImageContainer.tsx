@@ -3,7 +3,7 @@ import userDefault from "../../assets/user_default.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AuthContext } from "../../context/auth/AuthContext";
 import {useContext, useRef} from "react";
-import { showToolTip } from "../../components/Navigation/Footer";
+import { showToolTip } from "../../utils/helpers";
 
 
 type AccountImageContainerProps = {

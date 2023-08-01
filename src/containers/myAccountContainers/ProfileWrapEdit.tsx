@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { showToolTip } from "../../components/Navigation/Footer";
 import { AuthContext } from "../../context/auth/AuthContext";
 import {
   EmailAuthProvider,
@@ -21,6 +20,7 @@ import { PhoneNrEditContainer } from "./PhoneNrContainer";
 import { useContext } from "react";
 import { UsernameEditContainer } from "./UsernameEdit";
 import { EmailEditContainer } from "./EmailEditContainer";
+import { showToolTip } from "../../utils/helpers";
 
 const ProfileWrapEdit = () => {
   const { user, isProviderGoogle } = useContext(AuthContext);

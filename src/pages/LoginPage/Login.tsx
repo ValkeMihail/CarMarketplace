@@ -1,4 +1,3 @@
-import { showToolTip } from "../../components/Navigation/Footer";
 import { useState } from "react";
 import { auth, sendPasswordResetEmail } from "../../utils/firebase";
 import { FirstContainer } from "../../containers/loginPageContainers/FirstContainer";
@@ -6,6 +5,7 @@ import { SocialMediaLogin } from "../../containers/loginPageContainers/SocialMed
 import { FirebaseError } from "firebase/app";
 import { RegisterSection } from "../../containers/loginPageContainers/RegisterForm";
 import { LoginSection } from "../../containers/loginPageContainers/LoginSection";
+import { showToolTip } from "../../utils/helpers";
 
 
 

@@ -19,8 +19,8 @@ import { useState, useEffect } from "react";
 import { CarCardsList } from "../../components/CarLists/CarCard";
 import { filterType, SearchProps, sortType } from "../../pages/BuyPage/Buy";
 import { LoadingOverlay } from "../../components/Navigation/LoadingOverlay";
-import { showToolTip } from "../../components/Navigation/Footer";
 import { CarDocument } from "../../../types";
+import { showToolTip } from "../../utils/helpers";
 
 type AllCarsListProps = {
   sort: sortType | null;

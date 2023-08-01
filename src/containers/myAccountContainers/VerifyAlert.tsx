@@ -1,6 +1,6 @@
-import { showToolTip } from "../../components/Navigation/Footer";
 import { AuthContext } from "../../context/auth/AuthContext";
 import { useContext } from "react";
+import { showToolTip } from "../../utils/helpers";
 
 
 export const VerifyAlert = () => {

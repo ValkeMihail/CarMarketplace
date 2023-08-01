@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../context/auth/AuthContext";
-import { showToolTip } from "../../components/Navigation/Footer";
 import { PasswordInput } from "../../components/Inputs/PasswordInput";
 import { EmailInput } from "../../components/Inputs/EmailInput";
+import { showToolTip } from "../../utils/helpers";
 
 interface errorMessagesLoginForm {
   email: string;

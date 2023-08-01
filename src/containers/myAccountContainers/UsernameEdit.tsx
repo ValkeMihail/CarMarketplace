@@ -1,8 +1,8 @@
 import  { useRef, useState , useContext } from "react";
-import { showToolTip } from "../../components/Navigation/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faEdit } from "@fortawesome/free-solid-svg-icons";
 import { AuthContext } from "../../context/auth/AuthContext";
+import { showToolTip } from "../../utils/helpers";
 
 export const UsernameEditContainer = () => {
 

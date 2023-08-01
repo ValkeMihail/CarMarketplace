@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth/AuthContext";
-import { showToolTip } from "../../components/Navigation/Footer";
 import googlePng from "../../assets/google.svg";
+import { showToolTip } from "../../utils/helpers";
 
 export const SocialMediaLogin = () => {
   const navigate = useNavigate();

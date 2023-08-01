@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ChangeEvent, useRef, useState} from "react";
 import { Timestamp, addDoc, auth, collection, db, doc, getDownloadURL, ref, storage, updateDoc, uploadBytes } from "../../utils/firebase";
 import { faFile, faImage } from "@fortawesome/free-solid-svg-icons";
-import { showToolTip } from "../../components/Navigation/Footer";
+import { showToolTip } from "../../utils/helpers";
 
 
 type MessageFormProps = {

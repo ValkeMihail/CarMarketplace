@@ -1,15 +1,15 @@
-import { db , getDocs, limit, orderBy, startAfter,where,query ,auth ,collection, onAuthStateChanged} from "../../utils/firebase";
+import { db , getDocs, limit, orderBy, startAfter,where,query ,auth ,collection, onAuthStateChanged, DocumentData} from "../../utils/firebase";
 import {useEffect,useState} from "react";
 import { CarCardsList} from "./CarCard";
 import { LoadingOverlay } from "../Navigation/LoadingOverlay";
-import { showToolTip } from "../Navigation/Footer";
+import { showToolTip } from "../../utils/helpers";
 
 
 export const MyCarList = () => {
 
     
-    const [lastDoc, setLastDoc] = useState<any>(null);
-    const [carDocs, setCarDocs] = useState<any[]>([]);
+    const [lastDoc, setLastDoc] = useState<DocumentData | null>(null);
+    const [carDocs, setCarDocs] = useState<DocumentData[]>([]);
     const [requestMoreData, setRequestMoreData] = useState<boolean>(false);
     const [initialLoad, setInitialLoad] = useState<boolean>(true);
     const [snapSize, setSnapSize] = useState<number>(0);

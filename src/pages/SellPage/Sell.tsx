@@ -4,7 +4,6 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import {  arrayUnion,  auth,  db,  addDoc,  collection,  updateDoc,  doc,  getDownloadURL,  uploadBytes,  ref,  storage,  Timestamp,  deleteObject,  getDoc,  increment} from "../../utils/firebase";
 import { ChangeEvent, useRef, useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../context/auth/AuthContext";
-import { showToolTip } from "../../components/Navigation/Footer";
 import { Tags } from "../../components/Tags/Tags";
 import { NumericInput } from "../../components/Inputs/NumericInput";
 import { Select } from "../../components/Inputs/Select";
@@ -16,6 +15,7 @@ import { CarDescriptionContainer } from '../../containers/sellPageContainers/Car
 import { CarHistoryContainer } from '../../containers/sellPageContainers/CarHistoryContainer';
 import { CarWarrantyContainer } from '../../containers/sellPageContainers/CarWarrantyContainer';
 import { CarSellerContainer } from '../../containers/sellPageContainers/CarSellerContainer';
+import { showToolTip } from '../../utils/helpers';
 
 
 export type errorMessagesSellPage = {

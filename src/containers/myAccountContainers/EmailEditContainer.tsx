@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {useRef , useState, useContext} from "react";
 import { AuthContext } from "../../context/auth/AuthContext";
 import { EmailAuthProvider, GoogleAuthProvider, auth, reauthenticateWithCredential, reauthenticateWithPopup, updateEmail } from "../../utils/firebase";
-import { showToolTip } from "../../components/Navigation/Footer";
+import { showToolTip } from "../../utils/helpers";
 
 export const EmailEditContainer = () => {
 

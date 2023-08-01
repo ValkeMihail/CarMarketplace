@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SelectContainer } from "../../components/Inputs/SelectContainer";
-import { showToolTip } from "../../components/Navigation/Footer";
 import { AuthContext } from "../../context/auth/AuthContext";
 import { useRef , useState, useContext } from "react";
 import { faCheck, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { showToolTip } from "../../utils/helpers";
 
 
 
