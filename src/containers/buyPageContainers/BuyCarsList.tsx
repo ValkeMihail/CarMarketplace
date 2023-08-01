@@ -16,7 +16,7 @@ import {
   Query,
 } from "../../utils/firebase";
 import { useState, useEffect } from "react";
-import { CarCard } from "../../components/CarLists/CarCard";
+import { CarCardsList } from "../../components/CarLists/CarCard";
 import { filterType, SearchProps, sortType } from "../../pages/BuyPage/Buy";
 import { LoadingOverlay } from "../../components/Navigation/LoadingOverlay";
 import { showToolTip } from "../../components/Navigation/Footer";
@@ -160,7 +160,7 @@ const BuyCarList = ({
 
   return (
     <>
-      <CarCard carsDataArray={carDocs} />
+      <CarCardsList carsDataArray={carDocs} />
       {requestMoreData == false ? (
         <button
           onClick={

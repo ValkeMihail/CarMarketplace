@@ -1,6 +1,6 @@
 import { db , getDocs, limit, orderBy, startAfter,where,query ,auth ,collection, onAuthStateChanged} from "../../utils/firebase";
 import {useEffect,useState} from "react";
-import { CarCard} from "./CarCard";
+import { CarCardsList} from "./CarCard";
 import { LoadingOverlay } from "../Navigation/LoadingOverlay";
 import { showToolTip } from "../Navigation/Footer";
 
@@ -57,7 +57,7 @@ export const MyCarList = () => {
       
     return (
         <>
-            <CarCard carsDataArray={carDocs}/>
+            <CarCardsList carsDataArray={carDocs}/>
             {   requestMoreData==false ?(
                     <button 
                         onClick={(snapSize == 0) && initialLoad==false ?

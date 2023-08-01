@@ -12,13 +12,9 @@ import {
   faLocationDot,
   faGasPump,
 } from "@fortawesome/free-solid-svg-icons";
-
 import { AuthContext } from "../../context/auth/AuthContext";
-
 import { useState, useEffect, useContext } from "react";
-
-import { showToolTip } from "../Navigation/Footer";
-import { deleteCar, nrWithoutSpaces } from "../../utils/helpers";
+import { deleteCar, nrWithoutSpaces, showToolTip } from "../../utils/helpers";
 import { CarAvatar } from "../Avatars/CarAvatar";
 import { CarDocument } from "../../../types";
 import { UserAvatar } from "../Avatars/UserAvatar";
@@ -26,11 +22,12 @@ import { AdButtons } from "../AdButtons/AdButtons";
 import { CarInfoHeader } from "../CarInfo/CarInfoHeader";
 import { CarInfoWrap } from "../CarInfo/CarInfoWrap";
 
+
 interface CarCardProps {
   carsDataArray: CarDocument[];
 }
 
-export const CarCard = ({ carsDataArray }: CarCardProps) => {
+export const CarCardsList = ({ carsDataArray }: CarCardProps) => {
   const { user, setUSER } = useContext(AuthContext);
 
   const [carDocs, setCarDocs] = useState<CarDocument[]>([]);

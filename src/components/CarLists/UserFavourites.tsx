@@ -1,6 +1,6 @@
 import { getDoc,db ,doc, onAuthStateChanged, getDocs, collection, auth} from "../../utils/firebase";
 import {useContext ,useState,useEffect} from "react";
-import { CarCard } from "./CarCard";
+import { CarCardsList } from "./CarCard";
 import { AuthContext } from "../../context/auth/AuthContext";
 
 
@@ -59,6 +59,6 @@ export const UserFavourites = () => {
 
 
     return (
-        <CarCard carsDataArray={carDocs}/>
+        <CarCardsList carsDataArray={carDocs}/>
     );
 };
