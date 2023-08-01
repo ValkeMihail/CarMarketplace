@@ -1,8 +1,8 @@
 
 type CredentialsOrError = {
-  email?: string;
+  email: string;
   password: string;
-  confirmPassword: string;
+  confirmPassword?: string;
 };
 
 
@@ -30,10 +30,7 @@ export const EmailInput = ({
     <div className="form-input">
       <label>{label}:</label>
       <input
-        onChange={(e) => {
-          setCredentials({ ...credentials, email: e.target.value });
-          resetEmailError();
-        }}
+        onChange={(e) => {  setCredentials({ ...credentials, email: e.target.value });  resetEmailError();}}
         type="email"
         autoComplete="off"
         placeholder="Email"
