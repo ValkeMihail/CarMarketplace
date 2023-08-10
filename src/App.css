@@ -2813,9 +2813,9 @@ button.second-container button.form-input {
     }
 
 
-
-
-
+    .secondOverlay{
+      display: none;
+    }
 
     nav .menu li {
         margin: 1em 0;
