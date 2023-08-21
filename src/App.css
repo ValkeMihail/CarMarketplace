@@ -73,11 +73,11 @@
     --black99: #ffffff99;
     --charcoal: #f1f2ec;
 
-    #services{
-      visibility: hidden;
-    }
+    
 }
-
+:root.light #services{
+  visibility: hidden;
+}
 .header-body a,
 .header-body p,
 .header-body {
