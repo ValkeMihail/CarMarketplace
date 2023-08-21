@@ -72,6 +72,10 @@
     --black80: #ffffff80;
     --black99: #ffffff99;
     --charcoal: #f1f2ec;
+
+    #services{
+      visibility: hidden;
+    }
 }
 
 .header-body a,
@@ -419,6 +423,9 @@ header .container {
     backdrop-filter: blur(2px);
 }
 
+.header-body .btn.btn-primary{
+  background-color: black !important;
+}
 
 
 

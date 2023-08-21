@@ -7,9 +7,10 @@
   "background_color": "#000000",
   "icons": [
     {
-      "src": "./",
+      "src": "./favicon.png",
       "sizes": "144x144",
       "type": "image/png"
+
     }
   ]
 }

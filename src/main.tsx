@@ -1,9 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-import * as serviceWorker from './utils/serviceWorker.ts';
 
-serviceWorker.register();
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

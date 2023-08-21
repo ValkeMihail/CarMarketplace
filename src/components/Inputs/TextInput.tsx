@@ -39,7 +39,8 @@ export function TextInput({
     <div className="form-input">
       <label>{label}:</label>
       <input onChange={handleInputChange}
-        id="username" 
+        id="username"
+        name="username" 
         type="text" 
         placeholder="Username" 
       />
